@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Granted — Your Irish Residence, Organised</title>
+  <meta name="description" content="Granted helps non-EU nationals in Ireland track IRP stamps, monitor citizenship eligibility, store documents, and never miss a renewal deadline." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:   #12291d;
+      --green-mid:    #1e4030;
+      --green-light:  #2e6347;
+      --gold:         #c9a255;
+      --cream:        #f6f1e9;
+      --cream-dim:    #ede7da;
+      --text-main:    #1a2a21;
+      --text-muted:   #5a7060;
+      --white:        #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(246,241,233,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,162,85,0.18);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--green-deep); }
+    .nav-cta {
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      color: var(--white) !important;
+      background: var(--green-deep);
+      padding: 0.55rem 1.25rem;
+      border-radius: 100px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--green-light) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 7rem 2rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(46,99,71,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(201,162,85,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,162,85,0.12);
+      border: 1px solid rgba(201,162,85,0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s forwards;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--green-deep);
+      max-width: 780px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.35s forwards;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--green-light);
+    }
+    .hero-sub {
+      margin-top: 1.75rem;
+      font-size: 1.125rem;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 520px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.5s forwards;
+    }
+    .hero-actions {
+      display: flex; align-items: center; gap: 1rem;
+      margin-top: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.65s forwards;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--green-deep);
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px rgba(18,41,29,0.25);
+    }
+    .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
+    .btn-secondary {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--cream-dim);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--green-deep); border-color: var(--gold); }
+    .hero-note {
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      opacity: 0;
+      animation: fadeUp 0.7s 0.8s forwards;
+    }
+
+    /* ── FEATURES ── */
+    .features {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--green-deep);
+      max-width: 520px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dim);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .feature-card:hover { border-color: rgba(201,162,85,0.4); transform: translateY(-3px); }
+    .feature-icon {
+      width: 44px; height: 44px;
+      background: rgba(18,41,29,0.06);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1.25rem;
+    }
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.6rem;
+    }
+    .feature-card p {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    /* ── STAMP SECTION ── */
+    .stamps-section {
+      background: var(--green-deep);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+    .stamps-section .section-label { color: var(--gold); }
+    .stamps-section .section-title { color: var(--white); margin: 0 auto 3rem; text-align: center; max-width: 560px; }
+    .stamps-grid {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;
+      max-width: 700px; margin: 0 auto;
+    }
+    .stamp-pill {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.82rem;
+      font-weight: 400;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+    }
+    .stamp-pill.highlight {
+      background: rgba(201,162,85,0.18);
+      border-color: rgba(201,162,85,0.4);
+      color: var(--gold);
+    }
+
+    /* ── TRUST / GDPR BANNER ── */
+    .trust-section {
+      padding: 5rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .trust-section .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .trust-list { list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .trust-list li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.9rem; line-height: 1.6; color: var(--text-muted);
+    }
+    .trust-list li::before {
+      content: '✓';
+      color: var(--green-light);
+      font-weight: 600;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .trust-card {
+      background: var(--green-deep);
+      border-radius: 20px;
+      padding: 2.5rem;
+      color: var(--white);
+    }
+    .trust-card p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.9);
+    }
+    .trust-card-author {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--cream-dim);
+      padding: 2.5rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--green-deep);
+      font-weight: 600;
+    }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--green-deep); }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .trust-section { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">Granted</a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="#download" class="nav-cta">Download</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">🇮🇪 For non-EU nationals in Ireland</div>
+    <h1>Your Irish residence,<br /><em>organised.</em></h1>
+    <p class="hero-sub">
+      Track your IRP stamps, monitor citizenship eligibility, store your documents securely, and never miss a renewal deadline.
+    </p>
+    <div class="hero-actions">
+      <a href="#download" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v8M8 12l4 4 4-4"/></svg>
+        Download on the App Store
+      </a>
+      <a href="#features" class="btn-secondary">Learn more</a>
+    </div>
+    <p class="hero-note">Free to download · iPhone & iPad · iOS 18+</p>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <p class="section-label">What Granted does</p>
+    <h2 class="section-title">Everything you need to stay on top of your residency</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <h3>Stamp Tracker</h3>
+        <p>Log every IRP stamp with its dates and type. Your full residency history in one place.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⏳</div>
+        <h3>Citizenship Eligibility</h3>
+        <p>Know exactly how far you are from naturalisation. Real-time eligibility calculated from your stamp history.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3>Renewal Reminders</h3>
+        <p>Get notified before your IRP card expires. Never face an awkward lapse in your permission to stay.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗄️</div>
+        <h3>Document Vault</h3>
+        <p>Store passports, IRP cards, and supporting documents securely in iCloud. Access them anywhere. <em>Pro feature.</em></p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📷</div>
+        <h3>IRP Card Scanning</h3>
+        <p>Scan your IRP card with your camera and Granted auto-fills the stamp details. <em>Pro feature.</em></p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>AI Eligibility Q&A</h3>
+        <p>Ask questions about your situation and get personalised guidance based on your stamp history. <em>Pro feature.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAMPS -->
+  <section class="stamps-section">
+    <p class="section-label">Supported permits</p>
+    <h2 class="section-title">All Irish residence stamps, covered</h2>
+    <div class="stamps-grid">
+      <span class="stamp-pill highlight">Stamp 4 — Free from Conditions</span>
+      <span class="stamp-pill highlight">Stamp 5 — Without Condition</span>
+      <span class="stamp-pill">Stamp 1 — Work Permit</span>
+      <span class="stamp-pill">Stamp 1G — Graduate</span>
+      <span class="stamp-pill">Stamp 2 — Student</span>
+      <span class="stamp-pill">Stamp 2A — Student (no work)</span>
+      <span class="stamp-pill">Stamp 3 — Non-economic</span>
+      <span class="stamp-pill">Stamp 4 EUFam</span>
+      <span class="stamp-pill">Stamp 4D — EU Treaty Rights</span>
+      <span class="stamp-pill">Stamp 6 — Dual Citizenship</span>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust-section">
+    <div>
+      <p class="section-label">Privacy first</p>
+      <h2 class="section-title">Your immigration data stays yours</h2>
+      <ul class="trust-list">
+        <li>All documents stored in your own iCloud — we never see them</li>
+        <li>No advertising, no tracking, no data profiling</li>
+        <li>Fully GDPR compliant — built for Irish data law</li>
+        <li>IRP card images discarded immediately after scanning</li>
+        <li>Anonymous use possible — no account required for core features</li>
+      </ul>
+    </div>
+    <div class="trust-card">
+      <p>"Moving countries is stressful enough. Granted takes the anxiety out of keeping track of where you stand."</p>
+      <div class="trust-card-author">Designed in Ireland · Built for Ireland</div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Granted</span>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="mailto:hello@getgranted.ie">Contact</a>
+    </div>
+    <span class="footer-copy">© 2026 Granted. Made in Ireland.</span>
+  </footer>
+
+</body>
+</html>

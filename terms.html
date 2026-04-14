@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — Granted</title>
+  <meta name="description" content="Granted Terms of Use for the iOS application." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:   #12291d;
+      --green-mid:    #1e4030;
+      --green-light:  #2e6347;
+      --gold:         #c9a255;
+      --cream:        #f6f1e9;
+      --cream-dim:    #ede7da;
+      --text-main:    #1a2a21;
+      --text-muted:   #5a7060;
+      --white:        #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--cream-dim);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--green-deep); text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.875rem; color: var(--text-muted);
+      text-decoration: none; display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--green-deep); }
+
+    .page-header {
+      background: var(--green-deep);
+      padding: 4rem 2rem 3rem; text-align: center;
+    }
+    .page-header .eyebrow {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600; color: var(--white);
+    }
+    .page-header .meta {
+      margin-top: 1rem; font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .content {
+      max-width: 760px; margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--green-deep);
+      margin-top: 3rem; margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--cream-dim);
+    }
+    .content h3 {
+      font-size: 1rem; font-weight: 500;
+      color: var(--green-deep);
+      margin-top: 1.75rem; margin-bottom: 0.6rem;
+    }
+    .content p {
+      font-size: 0.95rem; line-height: 1.75;
+      color: var(--text-muted); margin-bottom: 1rem;
+    }
+    .content ul, .content ol {
+      padding-left: 1.5rem; margin-bottom: 1rem;
+    }
+    .content li {
+      font-size: 0.95rem; line-height: 1.75;
+      color: var(--text-muted); margin-bottom: 0.4rem;
+    }
+    .content a { color: var(--green-light); text-decoration: underline; }
+    .content strong { color: var(--text-main); font-weight: 500; }
+
+    .highlight-box {
+      background: rgba(201,162,85,0.1);
+      border: 1px solid rgba(201,162,85,0.3);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .highlight-box p { margin: 0; font-size: 0.9rem; color: var(--text-main); }
+
+    .warning-box {
+      background: rgba(18,41,29,0.05);
+      border: 1px solid rgba(18,41,29,0.12);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .warning-box p { margin: 0; font-size: 0.9rem; color: var(--text-main); }
+
+    footer {
+      border-top: 1px solid var(--cream-dim);
+      padding: 2rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--green-deep); font-weight: 600;
+    }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.82rem; color: var(--text-muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--green-deep); }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">Granted</a>
+    <a class="nav-back" href="/">← Back to home</a>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">Legal</p>
+    <h1>Terms of Use</h1>
+    <p class="meta">Version 1.0 · Effective 27 March 2026 · Last updated April 2026</p>
+  </div>
+
+  <div class="content">
+
+    <div class="highlight-box">
+      <p><strong>Plain-language summary:</strong> Granted is a tool to help you organise your immigration records. It does not provide legal advice. You own your data. Subscriptions are managed through Apple. Please use the app responsibly.</p>
+    </div>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By downloading, installing, or using the Granted app ("the App"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+    <p>These Terms constitute a legal agreement between you and the developer of Granted (a sole trader based in Ireland, "we", "us", or "our"). By using the App you also agree to Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard End User Licence Agreement (EULA)</a>.</p>
+
+    <h2>2. Description of the App</h2>
+    <p>Granted is a personal productivity application designed to help non-EU nationals living in Ireland:</p>
+    <ul>
+      <li>Track Irish Residence Permit (IRP) stamps and their associated dates</li>
+      <li>Monitor progress towards citizenship and naturalisation eligibility</li>
+      <li>Store immigration-related documents securely via iCloud</li>
+      <li>Receive reminders for upcoming permit renewals</li>
+      <li>Scan IRP cards using optical character recognition (Pro feature)</li>
+      <li>Ask questions about residency eligibility via AI assistance (Pro feature)</li>
+    </ul>
+
+    <div class="warning-box">
+      <p><strong>Important:</strong> Granted is an organisational tool only. It does not constitute legal advice and must not be relied upon as such. Always consult a qualified immigration solicitor or the Irish Naturalisation and Immigration Service (INIS) for formal advice on your immigration status.</p>
+    </div>
+
+    <h2>3. Eligibility</h2>
+    <p>You must be 18 years of age or older to use the App. By using Granted, you confirm that you are at least 18 years old. The App is intended for non-EU nationals living in Ireland.</p>
+
+    <h2>4. Account Registration</h2>
+    <p>Core features of the App are available without creating an account. An account is required for Pro features including document storage, IRP card scanning, and AI assistance.</p>
+    <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. Please notify us immediately at <a href="mailto:hello@getgranted.ie">hello@getgranted.ie</a> if you become aware of any unauthorised use of your account.</p>
+
+    <h2>5. Subscriptions and Payments</h2>
+
+    <h3>5.1 Free Tier</h3>
+    <p>The Free tier is available at no cost and includes core stamp tracking and eligibility monitoring features with reasonable usage limits.</p>
+
+    <h3>5.2 Pro Subscription</h3>
+    <p>The Pro subscription is available monthly or annually and unlocks IRP card scanning via OCR, the Document Vault, and AI eligibility Q&amp;A. Current pricing is displayed within the App and on the App Store listing.</p>
+
+    <h3>5.3 Family Subscription</h3>
+    <p>The Family subscription extends Pro features to multiple family members. Current pricing is displayed within the App.</p>
+
+    <h3>5.4 Billing and Renewal</h3>
+    <ul>
+      <li>All payments are processed by Apple via the App Store. We do not collect or store payment card information.</li>
+      <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current billing period.</li>
+      <li>You can manage and cancel your subscription at any time in your Apple ID account settings.</li>
+      <li>Refunds are handled by Apple in accordance with their refund policy.</li>
+    </ul>
+
+    <h3>5.5 Price Changes</h3>
+    <p>We reserve the right to change subscription prices. You will be notified of any price changes in advance, and the new price will apply at the next renewal period. Your continued use of the subscription after a price change constitutes your acceptance of the new price.</p>
+
+    <h2>6. Your Data and Content</h2>
+    <p>You retain full ownership of all data you enter into the App, including stamp records, notes, and documents. We do not claim any ownership rights over your content.</p>
+    <p>By using the App, you grant us a limited, non-exclusive licence to process your data solely for the purpose of providing the App's functionality, as described in our <a href="/privacy.html">Privacy Policy</a>.</p>
+    <p>You are responsible for the accuracy of the data you enter. Granted's eligibility calculations depend entirely on the accuracy of the stamp records you provide.</p>
+
+    <h2>7. Acceptable Use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the App for any unlawful purpose or in violation of any applicable laws</li>
+      <li>Attempt to reverse-engineer, decompile, or disassemble the App</li>
+      <li>Attempt to gain unauthorised access to any part of the App or its infrastructure</li>
+      <li>Use the App to store or transmit malicious code</li>
+      <li>Impersonate any person or entity</li>
+      <li>Use the App in any way that could damage, disable, overburden, or impair it</li>
+    </ul>
+
+    <h2>8. AI Features and Accuracy</h2>
+    <p>The AI Eligibility Q&amp;A feature (Pro) uses large language models to answer questions about your residency situation. These responses:</p>
+    <ul>
+      <li>Are generated based on the stamp history you have entered and general knowledge of Irish immigration rules</li>
+      <li>Are provided for informational and organisational purposes only</li>
+      <li>Do not constitute legal advice and should not be relied upon as such</li>
+      <li>May contain errors or omissions — immigration rules change frequently</li>
+    </ul>
+    <p>Always verify eligibility with INIS (<a href="https://www.irishimmigration.ie" target="_blank" rel="noopener">irishimmigration.ie</a>) or a qualified solicitor before making any immigration applications.</p>
+
+    <h2>9. Intellectual Property</h2>
+    <p>The App, including its design, code, and content (excluding user data), is owned by us and protected by Irish and international intellectual property laws. You may not copy, modify, distribute, or create derivative works from any part of the App without our express written permission.</p>
+    <p>The name "Granted," the app icon, and associated branding are our trademarks. Nothing in these Terms grants you any rights to use our trademarks.</p>
+
+    <h2>10. Third-Party Services</h2>
+    <p>The App integrates with third-party services including Firebase (Google), Apple iCloud, RevenueCat, and Anthropic. Your use of these services is subject to their respective terms and privacy policies. We are not responsible for the practices of these third-party providers.</p>
+
+    <h2>11. Disclaimers</h2>
+    <p>The App is provided "as is" and "as available" without any warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+    <p>We do not warrant that:</p>
+    <ul>
+      <li>The App will be uninterrupted, error-free, or free from viruses</li>
+      <li>The eligibility calculations are accurate or up to date with current Irish immigration law</li>
+      <li>The App will meet your specific requirements</li>
+    </ul>
+
+    <h2>12. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the App, including but not limited to:</p>
+    <ul>
+      <li>Reliance on eligibility calculations or AI responses for immigration decisions</li>
+      <li>Loss of data</li>
+      <li>Missed permit renewals or immigration deadlines</li>
+      <li>Any immigration application outcomes</li>
+    </ul>
+    <p>Nothing in these Terms limits our liability for death or personal injury caused by our negligence, fraud, or any other liability that cannot be excluded by Irish law.</p>
+
+    <h2>13. Termination</h2>
+    <p>You may stop using the App at any time. You can delete your account via <strong>Settings → Delete My Account</strong> within the App. Deleting your account will remove your Firebase authentication data. App data stored in iCloud is removed when you delete the App from your device.</p>
+    <p>We reserve the right to suspend or terminate access to the App in cases of serious misuse or breach of these Terms.</p>
+
+    <h2>14. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. We will notify you of material changes via an in-app notice. Your continued use of the App after the effective date of changes constitutes your acceptance of the updated Terms.</p>
+
+    <h2>15. Governing Law</h2>
+    <p>These Terms are governed by and construed in accordance with the laws of Ireland. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the Irish courts.</p>
+
+    <h2>16. Contact</h2>
+    <p>For any questions about these Terms:<br />
+    📧 <a href="mailto:hello@getgranted.ie">hello@getgranted.ie</a><br />
+    🌐 <a href="https://getgranted.ie">getgranted.ie</a></p>
+
+  </div>
+
+  <footer>
+    <span class="footer-logo">Granted</span>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="mailto:hello@getgranted.ie">Contact</a>
+    </div>
+    <span class="footer-copy">© 2026 Granted. Made in Ireland.</span>
+  </footer>
+
+</body>
+</html>
