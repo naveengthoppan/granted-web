@@ -212,6 +212,7 @@
           <tr><td>Anonymous session (no personal data)</td><td>Legitimate interest</td><td>Art. 6(1)(f)</td></tr>
           <tr><td>Firebase UID + email (registered users)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
           <tr><td>Stamp records (IRP type, dates)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
+          <tr><td>Absence records (travel dates, destination)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
           <tr><td>OCR text from IRP card scan</td><td>Consent</td><td>Art. 6(1)(a) — Pro feature opt-in</td></tr>
           <tr><td>Document metadata (filename, type, year)</td><td>Consent</td><td>Art. 6(1)(a) — Pro feature opt-in</td></tr>
         </tbody>
@@ -231,8 +232,9 @@
           <tr><td>Email address (if registered)</td><td>Firebase Auth (europe-west1)</td><td>Until account deleted</td><td>Developer via Firebase Console</td></tr>
           <tr><td>Display name (if provided)</td><td>SwiftData (device + iCloud)</td><td>Until user deletes</td><td>User only (iCloud encrypted)</td></tr>
           <tr><td>Stamp records (type, dates, notes)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (iCloud encrypted)</td></tr>
-          <tr><td>Document metadata (filename, type)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (iCloud encrypted)</td></tr>
-          <tr><td>Document files (PDF, images)</td><td>User's iCloud Drive (personal) or Firebase Storage europe-west1 (family plan)</td><td>Until deleted by user</td><td>User only</td></tr>
+          <tr><td>Absence records (travel dates, destination)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (iCloud encrypted)</td></tr>
+          <tr><td>Document metadata (filename, type, year)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (iCloud encrypted)</td></tr>
+          <tr><td>Document files (PDF, images)</td><td>User's iCloud container — all subscription tiers. Developer never has access.</td><td>Until deleted by user</td><td>User only (Apple end-to-end encrypted)</td></tr>
           <tr><td>OCR text (from scan — transient)</td><td>Memory only — never persisted</td><td>Duration of scan session only</td><td>On-device only</td></tr>
         </tbody>
       </table>
@@ -295,9 +297,8 @@
 
     <h3>4.2 Storage Limitation</h3>
     <ul>
-      <li>Documents are stored in your own iCloud — we never have access to document content</li>
-      <li>Firebase stores only authentication credentials — no immigration data</li>
-      <li>Firebase Storage uses UID-locked security rules — only you can read your data</li>
+      <li>Documents are stored in your own iCloud — we never have access to document content. This applies to all subscription tiers including Family.</li>
+      <li>Firebase stores only authentication credentials (UID, email) — no immigration data, no documents</li>
     </ul>
 
     <h3>4.3 Security Measures</h3>

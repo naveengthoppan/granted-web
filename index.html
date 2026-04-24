@@ -198,6 +198,7 @@
       border-radius: 16px;
       padding: 2rem;
       transition: border-color 0.2s, transform 0.2s;
+      position: relative;
     }
     .feature-card:hover { border-color: rgba(201,162,85,0.4); transform: translateY(-3px); }
     .feature-icon {
@@ -219,6 +220,26 @@
       font-size: 0.875rem;
       line-height: 1.65;
       color: var(--text-muted);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .badge-pro {
+      background: rgba(201,162,85,0.15);
+      color: #8a6520;
+      border: 1px solid rgba(201,162,85,0.35);
+    }
+    .badge-soon {
+      background: rgba(18,41,29,0.06);
+      color: var(--text-muted);
+      border: 1px solid rgba(18,41,29,0.1);
     }
 
     /* ── STAMP SECTION ── */
@@ -248,6 +269,92 @@
       border-color: rgba(201,162,85,0.4);
       color: var(--gold);
     }
+
+    /* ── PRICING ── */
+    .pricing-section {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      text-align: left;
+    }
+    .pricing-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dim);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .pricing-card:hover { border-color: rgba(201,162,85,0.4); transform: translateY(-3px); }
+    .pricing-card.featured {
+      background: var(--green-deep);
+      border-color: var(--green-deep);
+    }
+    .pricing-card.featured h3,
+    .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.85); }
+    .pricing-card.featured .pricing-price { color: var(--white); }
+    .pricing-card.featured .pricing-price span { color: rgba(255,255,255,0.6); }
+    .pricing-card.featured .pricing-label { color: var(--gold); }
+    .pricing-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .pricing-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+    .pricing-price {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      line-height: 1;
+      margin: 1rem 0 0.25rem;
+    }
+    .pricing-price span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .pricing-once {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .pricing-card.featured .pricing-once { color: rgba(255,255,255,0.5); }
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .pricing-features li {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--green-light);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .pricing-card.featured .pricing-features li::before { color: var(--gold); }
 
     /* ── TRUST / GDPR BANNER ── */
     .trust-section {
@@ -339,9 +446,10 @@
     <a class="nav-logo" href="/">Granted</a>
     <div class="nav-links">
       <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
-      <a href="#download" class="nav-cta">Download</a>
+      <a href="mailto:hello@getgranted.ie" class="nav-cta">Contact</a>
     </div>
   </nav>
 
@@ -350,16 +458,16 @@
     <div class="hero-eyebrow">🇮🇪 For non-EU nationals in Ireland</div>
     <h1>Your Irish residence,<br /><em>organised.</em></h1>
     <p class="hero-sub">
-      Track your IRP stamps, monitor citizenship eligibility, store your documents securely, and never miss a renewal deadline.
+      Track your IRP stamps, monitor citizenship eligibility, log your travel absences, and never miss a renewal deadline.
     </p>
     <div class="hero-actions">
-      <a href="#download" class="btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 8v8M8 12l4 4 4-4"/></svg>
-        Download on the App Store
+      <a href="mailto:hello@getgranted.ie?subject=Granted early access" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get early access
       </a>
       <a href="#features" class="btn-secondary">Learn more</a>
     </div>
-    <p class="hero-note">Free to download · iPhone & iPad · iOS 18+</p>
+    <p class="hero-note">Coming to the App Store · iPhone · iOS 18+</p>
   </section>
 
   <!-- FEATURES -->
@@ -367,36 +475,53 @@
     <p class="section-label">What Granted does</p>
     <h2 class="section-title">Everything you need to stay on top of your residency</h2>
     <div class="features-grid">
+
       <div class="feature-card">
         <div class="feature-icon">📋</div>
         <h3>Stamp Tracker</h3>
         <p>Log every IRP stamp with its dates and type. Your full residency history in one place.</p>
       </div>
+
       <div class="feature-card">
         <div class="feature-icon">⏳</div>
         <h3>Citizenship Eligibility</h3>
-        <p>Know exactly how far you are from naturalisation. Real-time eligibility calculated from your stamp history.</p>
+        <p>Know exactly how far you are from naturalisation. Real-time eligibility calculated from your stamp history and travel absences.</p>
       </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">✈️</div>
+        <h3>Travel Absence Log</h3>
+        <p>Log trips outside Ireland so your citizenship clock stays accurate. Days abroad are factored directly into your eligibility calculation.</p>
+      </div>
+
       <div class="feature-card">
         <div class="feature-icon">🔔</div>
         <h3>Renewal Reminders</h3>
-        <p>Get notified before your IRP card expires. Never face an awkward lapse in your permission to stay.</p>
+        <p>Get notified 90, 60, and 30 days before your IRP card expires. Never face an awkward lapse in your permission to stay.</p>
       </div>
+
       <div class="feature-card">
         <div class="feature-icon">🗄️</div>
+        <div class="badge badge-pro">Pro</div>
         <h3>Document Vault</h3>
-        <p>Store passports, IRP cards, and supporting documents securely in iCloud. Access them anywhere. <em>Pro feature.</em></p>
+        <p>Store P60s, payslips, utility bills, and other citizenship application documents securely in your own iCloud. Organised by year and document type.</p>
       </div>
+
       <div class="feature-card">
         <div class="feature-icon">📷</div>
+        <div class="badge badge-pro">Pro</div>
         <h3>IRP Card Scanning</h3>
-        <p>Scan your IRP card with your camera and Granted auto-fills the stamp details. <em>Pro feature.</em></p>
+        <p>Scan your IRP card with your camera and Granted auto-fills the stamp details. Processed on-device — your card image is never stored or transmitted.</p>
       </div>
+
       <div class="feature-card">
         <div class="feature-icon">💬</div>
-        <h3>AI Eligibility Q&A</h3>
-        <p>Ask questions about your situation and get personalised guidance based on your stamp history. <em>Pro feature.</em></p>
+        <div class="badge badge-pro">Pro</div>
+        <div class="badge badge-soon">Coming soon</div>
+        <h3>AI Eligibility Q&amp;A</h3>
+        <p>Ask questions about your situation and get personalised guidance based on your actual stamp history. For guidance only — not legal advice.</p>
       </div>
+
     </div>
   </section>
 
@@ -405,16 +530,72 @@
     <p class="section-label">Supported permits</p>
     <h2 class="section-title">All Irish residence stamps, covered</h2>
     <div class="stamps-grid">
-      <span class="stamp-pill highlight">Stamp 4 — Free from Conditions</span>
-      <span class="stamp-pill highlight">Stamp 5 — Without Condition</span>
-      <span class="stamp-pill">Stamp 1 — Work Permit</span>
-      <span class="stamp-pill">Stamp 1G — Graduate</span>
+      <span class="stamp-pill highlight">Stamp 4 — Long-Term Residence</span>
+      <span class="stamp-pill highlight">Stamp 5 — Permanent Residence</span>
+      <span class="stamp-pill highlight">Stamp 1 — Work Permit</span>
+      <span class="stamp-pill highlight">Stamp 1G — Graduate</span>
+      <span class="stamp-pill highlight">Stamp 3 — Dependent</span>
+      <span class="stamp-pill highlight">Stamp 4EUFAM — EU Family</span>
+      <span class="stamp-pill highlight">Stamp 4D — UK Family</span>
+      <span class="stamp-pill">Stamp 1A — Trainee</span>
       <span class="stamp-pill">Stamp 2 — Student</span>
       <span class="stamp-pill">Stamp 2A — Student (no work)</span>
-      <span class="stamp-pill">Stamp 3 — Non-economic</span>
-      <span class="stamp-pill">Stamp 4 EUFam</span>
-      <span class="stamp-pill">Stamp 4D — EU Treaty Rights</span>
-      <span class="stamp-pill">Stamp 6 — Dual Citizenship</span>
+      <span class="stamp-pill">Stamp 0 — Temporary</span>
+      <span class="stamp-pill">Stamp 6 — Citizen</span>
+    </div>
+    <p style="margin-top:2rem;font-size:0.8rem;color:rgba(255,255,255,0.45);letter-spacing:0.04em;">Highlighted stamps count toward citizenship eligibility (reckonable residence)</p>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <p class="section-label">Simple pricing</p>
+    <h2 class="section-title" style="margin:0 auto;">Pay once. Yours forever.</h2>
+    <p style="margin-top:1rem;font-size:0.95rem;color:var(--text-muted);max-width:440px;margin-left:auto;margin-right:auto;">
+      No subscriptions. No monthly fees. Buy Pro or Family once and keep it for life.
+    </p>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <p class="pricing-label">Free</p>
+        <h3>Core</h3>
+        <div class="pricing-price">€0</div>
+        <p class="pricing-once">Always free</p>
+        <ul class="pricing-features">
+          <li>Stamp tracker (manual entry)</li>
+          <li>Citizenship eligibility countdown</li>
+          <li>Travel absence log</li>
+          <li>Renewal reminders (90, 60, 30 days)</li>
+          <li>Stamp info library</li>
+          <li>No account required</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card featured">
+        <p class="pricing-label">One-time purchase</p>
+        <h3>Pro</h3>
+        <div class="pricing-price">€49.99 <span>once</span></div>
+        <p class="pricing-once">Lifetime access · no renewal</p>
+        <ul class="pricing-features">
+          <li>Everything in Core</li>
+          <li>IRP card scanning (camera OCR)</li>
+          <li>Document Vault (iCloud storage)</li>
+          <li>AI Eligibility Q&amp;A</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card">
+        <p class="pricing-label">One-time purchase</p>
+        <h3>Family</h3>
+        <div class="pricing-price">€79.99 <span>once</span></div>
+        <p class="pricing-once">Lifetime access · no renewal</p>
+        <ul class="pricing-features">
+          <li>Everything in Pro</li>
+          <li>Up to 5 family member profiles</li>
+          <li>Shared document vault</li>
+          <li>Individual eligibility tracking per member</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -427,7 +608,7 @@
         <li>All documents stored in your own iCloud — we never see them</li>
         <li>No advertising, no tracking, no data profiling</li>
         <li>Fully GDPR compliant — built for Irish data law</li>
-        <li>IRP card images discarded immediately after scanning</li>
+        <li>IRP card images discarded immediately after scanning — never stored or transmitted</li>
         <li>Anonymous use possible — no account required for core features</li>
       </ul>
     </div>
