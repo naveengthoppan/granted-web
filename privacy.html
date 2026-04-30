@@ -12,15 +12,26 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-deep:   #12291d;
-      --green-mid:    #1e4030;
-      --green-light:  #2e6347;
-      --gold:         #c9a255;
-      --cream:        #f6f1e9;
-      --cream-dim:    #ede7da;
-      --text-main:    #1a2a21;
-      --text-muted:   #5a7060;
+      --green-900:    #021E12;
+      --green-700:    #0A5C38;
+      --green-600:    #0F7A4A;
+      --green-500:    #169B62;
+      --green-300:    #6EC4A5;
+      --green-100:    #D6F0E4;
+      --green-50:     #F0FAF5;
+      --amber:        #FF9500;
+      --neutral-900:  #1C1C1E;
+      --neutral-600:  #636366;
       --white:        #ffffff;
+
+      --green-deep:   var(--green-900);
+      --green-mid:    var(--green-700);
+      --green-light:  var(--green-500);
+      --gold:         var(--amber);
+      --cream:        var(--green-50);
+      --cream-dim:    var(--green-100);
+      --text-main:    var(--neutral-900);
+      --text-muted:   var(--neutral-600);
     }
 
     html { scroll-behavior: smooth; }
@@ -130,12 +141,12 @@
       vertical-align: top;
     }
     tr:last-child td { border-bottom: none; }
-    tr:nth-child(even) td { background: rgba(246,241,233,0.6); }
+    tr:nth-child(even) td { background: rgba(214,240,228,0.4); }
 
     /* HIGHLIGHT BOX */
     .highlight-box {
-      background: rgba(201,162,85,0.1);
-      border: 1px solid rgba(201,162,85,0.3);
+      background: rgba(255,149,0,0.08);
+      border: 1px solid rgba(255,149,0,0.26);
       border-radius: 10px;
       padding: 1.25rem 1.5rem;
       margin: 1.5rem 0;

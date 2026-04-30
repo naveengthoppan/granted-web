@@ -12,15 +12,31 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-deep:   #12291d;
-      --green-mid:    #1e4030;
-      --green-light:  #2e6347;
-      --gold:         #c9a255;
-      --cream:        #f6f1e9;
-      --cream-dim:    #ede7da;
-      --text-main:    #1a2a21;
-      --text-muted:   #5a7060;
+      --green-900:    #021E12;
+      --green-700:    #0A5C38;
+      --green-600:    #0F7A4A;
+      --green-500:    #169B62;
+      --green-400:    #3AAE82;
+      --green-300:    #6EC4A5;
+      --green-100:    #D6F0E4;
+      --green-50:     #F0FAF5;
+      --amber:        #FF9500;
+      --amber-800:    #5C3900;
+      --neutral-900:  #1C1C1E;
+      --neutral-700:  #48484A;
+      --neutral-600:  #636366;
+      --neutral-100:  #F2F2F7;
       --white:        #ffffff;
+
+      /* Semantic aliases kept for CSS legibility */
+      --green-deep:   var(--green-900);
+      --green-mid:    var(--green-700);
+      --green-light:  var(--green-500);
+      --gold:         var(--amber);
+      --cream:        var(--green-50);
+      --cream-dim:    var(--green-100);
+      --text-main:    var(--neutral-900);
+      --text-muted:   var(--neutral-600);
     }
 
     html { scroll-behavior: smooth; }
@@ -37,9 +53,9 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.25rem 2.5rem;
-      background: rgba(246,241,233,0.88);
+      background: rgba(240,250,245,0.88);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201,162,85,0.18);
+      border-bottom: 1px solid rgba(255,149,0,0.14);
     }
     .nav-logo {
       font-family: 'Playfair Display', serif;
@@ -63,12 +79,12 @@
       font-size: 0.8rem !important;
       font-weight: 500 !important;
       color: var(--white) !important;
-      background: var(--green-deep);
+      background: var(--green-500);
       padding: 0.55rem 1.25rem;
       border-radius: 100px;
       transition: background 0.2s !important;
     }
-    .nav-cta:hover { background: var(--green-light) !important; }
+    .nav-cta:hover { background: var(--green-600) !important; }
 
     /* ── HERO ── */
     .hero {
@@ -83,8 +99,8 @@
       content: '';
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(46,99,71,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(201,162,85,0.08) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(22,155,98,0.13) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(255,149,0,0.07) 0%, transparent 60%);
       pointer-events: none;
     }
     .hero-eyebrow {
@@ -93,9 +109,9 @@
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
-      background: rgba(201,162,85,0.12);
-      border: 1px solid rgba(201,162,85,0.3);
+      color: var(--amber);
+      background: rgba(255,149,0,0.1);
+      border: 1px solid rgba(255,149,0,0.28);
       padding: 0.4rem 1rem;
       border-radius: 100px;
       margin-bottom: 2rem;
@@ -115,7 +131,7 @@
     }
     .hero h1 em {
       font-style: italic;
-      color: var(--green-light);
+      color: var(--green-500);
     }
     .hero-sub {
       margin-top: 1.75rem;
@@ -139,14 +155,14 @@
       font-size: 0.9rem;
       font-weight: 500;
       color: var(--white);
-      background: var(--green-deep);
+      background: var(--green-500);
       padding: 0.85rem 2rem;
       border-radius: 100px;
       text-decoration: none;
       transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 4px 20px rgba(18,41,29,0.25);
+      box-shadow: 0 4px 20px rgba(22,155,98,0.3);
     }
-    .btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
+    .btn-primary:hover { background: var(--green-600); transform: translateY(-1px); }
     .btn-secondary {
       font-size: 0.875rem;
       font-weight: 400;
@@ -155,7 +171,7 @@
       border-bottom: 1px solid var(--cream-dim);
       transition: color 0.2s, border-color 0.2s;
     }
-    .btn-secondary:hover { color: var(--green-deep); border-color: var(--gold); }
+    .btn-secondary:hover { color: var(--green-deep); border-color: var(--amber); }
     .hero-note {
       margin-top: 1.25rem;
       font-size: 0.78rem;
@@ -175,7 +191,7 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--green-500);
       margin-bottom: 1rem;
     }
     .section-title {
@@ -200,10 +216,10 @@
       transition: border-color 0.2s, transform 0.2s;
       position: relative;
     }
-    .feature-card:hover { border-color: rgba(201,162,85,0.4); transform: translateY(-3px); }
+    .feature-card:hover { border-color: rgba(22,155,98,0.4); transform: translateY(-3px); }
     .feature-icon {
       width: 44px; height: 44px;
-      background: rgba(18,41,29,0.06);
+      background: rgba(22,155,98,0.08);
       border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1.3rem;
@@ -232,23 +248,18 @@
       margin-bottom: 0.75rem;
     }
     .badge-pro {
-      background: rgba(201,162,85,0.15);
-      color: #8a6520;
-      border: 1px solid rgba(201,162,85,0.35);
-    }
-    .badge-soon {
-      background: rgba(18,41,29,0.06);
-      color: var(--text-muted);
-      border: 1px solid rgba(18,41,29,0.1);
+      background: rgba(255,149,0,0.12);
+      color: var(--amber-800);
+      border: 1px solid rgba(255,149,0,0.32);
     }
 
     /* ── STAMP SECTION ── */
     .stamps-section {
-      background: var(--green-deep);
+      background: var(--green-900);
       padding: 6rem 2rem;
       text-align: center;
     }
-    .stamps-section .section-label { color: var(--gold); }
+    .stamps-section .section-label { color: var(--green-300); }
     .stamps-section .section-title { color: var(--white); margin: 0 auto 3rem; text-align: center; max-width: 560px; }
     .stamps-grid {
       display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;
@@ -265,9 +276,9 @@
       letter-spacing: 0.02em;
     }
     .stamp-pill.highlight {
-      background: rgba(201,162,85,0.18);
-      border-color: rgba(201,162,85,0.4);
-      color: var(--gold);
+      background: rgba(22,155,98,0.2);
+      border-color: rgba(22,155,98,0.5);
+      color: var(--green-300);
     }
 
     /* ── PRICING ── */
@@ -291,22 +302,22 @@
       padding: 2.5rem 2rem;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .pricing-card:hover { border-color: rgba(201,162,85,0.4); transform: translateY(-3px); }
+    .pricing-card:hover { border-color: rgba(22,155,98,0.4); transform: translateY(-3px); }
     .pricing-card.featured {
-      background: var(--green-deep);
-      border-color: var(--green-deep);
+      background: var(--green-900);
+      border-color: var(--green-900);
     }
     .pricing-card.featured h3,
     .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.85); }
     .pricing-card.featured .pricing-price { color: var(--white); }
     .pricing-card.featured .pricing-price span { color: rgba(255,255,255,0.6); }
-    .pricing-card.featured .pricing-label { color: var(--gold); }
+    .pricing-card.featured .pricing-label { color: var(--green-300); }
     .pricing-label {
       font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--green-500);
       margin-bottom: 0.75rem;
     }
     .pricing-card h3 {
@@ -350,11 +361,11 @@
     }
     .pricing-features li::before {
       content: '✓';
-      color: var(--green-light);
+      color: var(--green-500);
       font-weight: 600;
       flex-shrink: 0;
     }
-    .pricing-card.featured .pricing-features li::before { color: var(--gold); }
+    .pricing-card.featured .pricing-features li::before { color: var(--green-300); }
 
     /* ── TRUST / GDPR BANNER ── */
     .trust-section {
@@ -374,13 +385,13 @@
     }
     .trust-list li::before {
       content: '✓';
-      color: var(--green-light);
+      color: var(--green-500);
       font-weight: 600;
       flex-shrink: 0;
       margin-top: 0.1rem;
     }
     .trust-card {
-      background: var(--green-deep);
+      background: var(--green-900);
       border-radius: 20px;
       padding: 2.5rem;
       color: var(--white);
@@ -399,7 +410,7 @@
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--green-300);
     }
 
     /* ── FOOTER ── */
@@ -479,25 +490,31 @@
       <div class="feature-card">
         <div class="feature-icon">📋</div>
         <h3>Stamp Tracker</h3>
-        <p>Log every IRP stamp with its dates and type. Your full residency history in one place.</p>
+        <p>Log every IRP stamp with its type, issue date, and expiry. Stamps are sorted by urgency — expiring first — with live valid, expiring, and expired status indicators.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">⏳</div>
         <h3>Citizenship Eligibility</h3>
-        <p>Know exactly how far you are from naturalisation. Real-time eligibility calculated from your stamp history and travel absences.</p>
+        <p>Know exactly how far you are from naturalisation. A real-time counter, 5-year progress bar, and estimated eligibility date — calculated from your stamps and travel history.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">✈️</div>
         <h3>Travel Absence Log</h3>
-        <p>Log trips outside Ireland so your citizenship clock stays accurate. Days abroad are factored directly into your eligibility calculation.</p>
+        <p>Log trips outside Ireland so your citizenship clock stays accurate. Continuous residence warnings fire automatically if any absence window exceeds 42 days.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">🔔</div>
         <h3>Renewal Reminders</h3>
-        <p>Get notified 90, 60, and 30 days before your IRP card expires. Never face an awkward lapse in your permission to stay.</p>
+        <p>Push notifications at 90, 60, and 30 days before your IRP card expires. An in-app banner activates automatically if notifications are turned off.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📖</div>
+        <h3>Stamp Info Library</h3>
+        <p>Plain-English descriptions of all 12 Irish residence stamps — what each means, whether it counts toward citizenship, and how it fits your residency journey.</p>
       </div>
 
       <div class="feature-card">
@@ -511,15 +528,14 @@
         <div class="feature-icon">📷</div>
         <div class="badge badge-pro">Pro</div>
         <h3>IRP Card Scanning</h3>
-        <p>Scan your IRP card with your camera and Granted auto-fills the stamp details. Processed on-device — your card image is never stored or transmitted.</p>
+        <p>Scan your IRP card with your camera and Granted auto-fills stamp details. Uses Apple Intelligence on-device for supported iPhones — your card image is never stored or transmitted.</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon">💬</div>
         <div class="badge badge-pro">Pro</div>
-        <div class="badge badge-soon">Coming soon</div>
         <h3>AI Eligibility Q&amp;A</h3>
-        <p>Ask questions about your situation and get personalised guidance based on your actual stamp history. For guidance only — not legal advice.</p>
+        <p>Ask plain-English questions about your situation and get personalised answers based on your actual stamp history and travel log. Powered by Claude Opus. For guidance only — not legal advice.</p>
       </div>
 
     </div>
@@ -610,6 +626,7 @@
         <li>Fully GDPR compliant — built for Irish data law</li>
         <li>IRP card images discarded immediately after scanning — never stored or transmitted</li>
         <li>Anonymous use possible — no account required for core features</li>
+        <li>Data syncs across your devices via iCloud — private by design</li>
       </ul>
     </div>
     <div class="trust-card">
