@@ -413,6 +413,62 @@
       color: var(--green-300);
     }
 
+    /* ── FOUNDER / STORY ── */
+    .founder-section {
+      padding: 6rem 2rem;
+      background: var(--white);
+      border-top: 1px solid var(--cream-dim);
+      border-bottom: 1px solid var(--cream-dim);
+    }
+    .founder-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .founder-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--green-deep);
+      margin: 0.75rem 0 2.25rem;
+      line-height: 1.2;
+    }
+    .founder-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+    .founder-body p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .founder-body strong {
+      color: var(--green-deep);
+      font-weight: 500;
+    }
+    .founder-sig {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--cream-dim);
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .founder-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--green-deep);
+    }
+    .founder-role {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-500);
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--cream-dim);
@@ -458,6 +514,7 @@
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
+      <a href="#story">Our Story</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
       <a href="mailto:hello@getgranted.ie" class="nav-cta">Contact</a>
@@ -615,6 +672,29 @@
     </div>
   </section>
 
+  <!-- FOUNDER STORY -->
+  <section class="founder-section" id="story">
+    <div class="founder-inner">
+      <p class="section-label">From the founder</p>
+      <h2 class="founder-heading">I've been in your shoes.</h2>
+      <div class="founder-body">
+        <p>
+          I moved to Ireland from India in August 2017 — a Masters student at the University of Limerick with no idea that Ireland would become home. Years later, I went through the citizenship process myself. Then again for my wife. Then for our children.
+        </p>
+        <p>
+          The application wasn't the hard part. <strong>Organising nearly a decade of documents was.</strong> And then came the moment that stuck with me: my wife had no utility bills in her name. For years, everything — the electricity, the broadband, the gas — was in mine. Nobody told us that would matter when the time came. There is no checklist handed to you at the immigration office on day one.
+        </p>
+        <p>
+          Granted is the app I wish had existed in 2017. Not just for people who are ready to apply — but for any non-EU immigrant, <strong>from the moment they land in Ireland.</strong> It might save you the cost of hiring an agent. It might save you a panicked night searching for a payslip from six years ago. But more than anything, it is built by someone who went through it, for the people going through it now.
+        </p>
+      </div>
+      <div class="founder-sig">
+        <span class="founder-name">Naveen George Thoppan</span>
+        <span class="founder-role">iOS Developer &middot; Founder, Granted</span>
+      </div>
+    </div>
+  </section>
+
   <!-- TRUST -->
   <section class="trust-section">
     <div>
@@ -631,7 +711,7 @@
     </div>
     <div class="trust-card">
       <p>"Moving countries is stressful enough. Granted takes the anxiety out of keeping track of where you stand."</p>
-      <div class="trust-card-author">Designed in Ireland · Built for Ireland</div>
+      <div class="trust-card-author">Naveen George Thoppan &middot; Founder</div>
     </div>
   </section>
 
