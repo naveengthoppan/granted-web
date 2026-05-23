@@ -584,6 +584,109 @@
     }
     .preview-caption .badge { margin-top: 0.4rem; }
 
+    /* ── CITIZENSHIP GUIDE BANNER ── */
+    .guide-banner {
+      background: var(--green-deep);
+      padding: 5rem 2rem;
+    }
+    .guide-banner-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+    .guide-banner-text .badge-pill {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(255,149,0,0.12);
+      border: 1px solid rgba(255,149,0,0.28);
+      border-radius: 100px; padding: 0.35rem 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .guide-banner-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 600; color: var(--white);
+      line-height: 1.2; margin-bottom: 1rem;
+    }
+    .guide-banner-text h2 em { font-style: italic; color: var(--green-300); }
+    .guide-banner-text p {
+      font-size: 1rem; color: var(--green-300);
+      line-height: 1.7; margin-bottom: 1.75rem;
+    }
+    .guide-banner-link {
+      display: inline-block;
+      background: var(--green-500); color: var(--white);
+      font-size: 0.9rem; font-weight: 500;
+      padding: 0.85rem 2rem; border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(22,155,98,0.3);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .guide-banner-link:hover { background: var(--green-600); transform: translateY(-2px); }
+    .guide-steps {
+      display: flex; flex-direction: column; gap: 0.85rem;
+    }
+    .guide-step {
+      display: flex; align-items: flex-start; gap: 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1.5px solid rgba(110,196,165,0.15);
+      border-radius: 14px; padding: 1rem 1.25rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .guide-step:hover { background: rgba(255,255,255,0.09); border-color: rgba(110,196,165,0.3); }
+    .guide-step-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .guide-step-text h4 {
+      font-size: 0.9rem; font-weight: 600;
+      color: var(--white); margin-bottom: 0.2rem;
+    }
+    .guide-step-text p {
+      font-size: 0.8rem; color: var(--green-300); line-height: 1.5;
+    }
+    @media (max-width: 800px) {
+      .guide-banner-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* ── DAY ONE EMPHASIS ── */
+    .day-one-section {
+      background: var(--cream);
+      padding: 5rem 2rem;
+      border-bottom: 1.5px solid var(--green-100);
+    }
+    .day-one-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap;
+    }
+    .day-one-text { flex: 1; min-width: 260px; }
+    .day-one-text .section-label { margin-bottom: 0.5rem; }
+    .day-one-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 600; color: var(--green-deep);
+      line-height: 1.25; margin-bottom: 0.75rem;
+    }
+    .day-one-text h2 em { font-style: italic; color: var(--green-500); }
+    .day-one-text p {
+      font-size: 0.9375rem; color: var(--text-muted);
+      line-height: 1.7; max-width: 480px;
+    }
+    .day-one-chips {
+      display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.25rem;
+    }
+    .d1-chip {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8rem; color: var(--text-muted);
+      background: var(--white);
+      border: 1.5px solid var(--green-100);
+      border-radius: 100px; padding: 0.4rem 0.9rem;
+    }
+    .day-one-cta { flex-shrink: 0; }
+    .day-one-cta a {
+      display: block; margin-bottom: 0.75rem;
+    }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
@@ -612,6 +715,7 @@
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
+      <a href="/citizenship.html">Citizenship Guide</a>
       <a href="#story">Our Story</a>
       <a href="/privacy.html">Privacy</a>
       <a href="/terms.html">Terms</a>
@@ -643,6 +747,76 @@
       </div>
       <div class="hero-phone hp-right">
         <img src="screenshots/02_eligibility.png" alt="" loading="eager" />
+      </div>
+    </div>
+  </section>
+
+  <!-- DAY ONE EMPHASIS -->
+  <section class="day-one-section">
+    <div class="day-one-inner">
+      <div class="day-one-text">
+        <p class="section-label">Start from Day One</p>
+        <h2>Use Granted from the<br><em>moment you land.</em></h2>
+        <p>Your citizenship application will require evidence of every year you've been in Ireland. The earlier you start tracking, the easier that day will be. Granted is built for the day you arrive — not the day you apply.</p>
+        <div class="day-one-chips">
+          <span class="d1-chip">✈️ Log airport stamp on arrival</span>
+          <span class="d1-chip">🔔 IRP renewal reminders from Day 1</span>
+          <span class="d1-chip">📊 Eligibility counter starts immediately</span>
+          <span class="d1-chip">📁 Documents organised year by year</span>
+        </div>
+      </div>
+      <div class="day-one-cta">
+        <a href="/citizenship.html" class="btn-primary">Read the Citizenship Guide →</a>
+        <a href="#pricing" style="display: block; text-align: center; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; padding-top: 0.25rem;">or see pricing ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITIZENSHIP GUIDE BANNER -->
+  <section class="guide-banner">
+    <div class="guide-banner-inner">
+      <div class="guide-banner-text">
+        <div class="badge-pill">📖 Free Reference Guide</div>
+        <h2>Your complete guide to<br><em>Irish citizenship.</em></h2>
+        <p>From your first stamp at Dublin Airport, through IRP cards and annual renewals, reckonable residence, the full documents checklist, and every stage of the application — mapped out clearly for non-EU nationals.</p>
+        <a href="/citizenship.html" class="guide-banner-link">Explore the Citizenship Pathway →</a>
+      </div>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step-icon">✈️</span>
+          <div class="guide-step-text">
+            <h4>Day 1 — First stamp at the airport</h4>
+            <p>Your Irish residence timeline starts the moment you land. Know what your entry stamp means.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step-icon">🏛️</span>
+          <div class="guide-step-text">
+            <h4>Within 90 days — IRP card registration</h4>
+            <p>Register with GNIB and get your Irish Residence Permit card. Your most important proof of lawful residence.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step-icon">⏱️</span>
+          <div class="guide-step-text">
+            <h4>5 years — 60 months reckonable residence</h4>
+            <p>Not all time counts. Understand which stamps are reckonable and which are not — before it's too late.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step-icon">📋</span>
+          <div class="guide-step-text">
+            <h4>Application day — every document, every year</h4>
+            <p>A year-by-year document checklist so nothing is missing when it matters most.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step-icon">🛂</span>
+          <div class="guide-step-text">
+            <h4>Irish passport — the final step</h4>
+            <p>Ceremony, certificate, and your first Irish passport. What to expect and when.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -908,6 +1082,7 @@
   <footer>
     <span class="footer-logo">Granted</span>
     <div class="footer-links">
+      <a href="/citizenship.html">Citizenship Guide</a>
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms of Use</a>
       <a href="mailto:hello@getgranted.ie">Contact</a>
