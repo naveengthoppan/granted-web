@@ -41,6 +41,11 @@
 
     html { scroll-behavior: smooth; }
 
+    /* Offset anchor links so fixed nav doesn't cover section headings */
+    #features, #pricing, #story, #screenshots {
+      scroll-margin-top: 88px;
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--cream);
