@@ -203,11 +203,11 @@
 
     <h2>1. Overview</h2>
     <p>Granted processes personal data belonging to non-EU nationals living in Ireland. This data includes immigration status, document metadata, and identity information used for authentication. This policy defines how that data is collected, stored, processed, and protected in compliance with the <strong>General Data Protection Regulation (GDPR)</strong> and the <strong>Irish Data Protection Acts 2018</strong>.</p>
-    <p>As the developer and operator of Granted, the individual developer acts as both Data Controller (for authentication data) and Data Processor (for document metadata facilitating iCloud storage).</p>
+    <p>As the developer and operator of Granted, the individual developer acts as the <strong>Data Controller</strong> for all personal data processed through the app. Third-party services (Firebase, Anthropic, Apple iCloud, RevenueCat) act as Data Processors under their respective data processing agreements.</p>
 
     <h3>1.1 Data Controller</h3>
     <p>
-      <strong>Name:</strong> [Developer name]<br />
+      <strong>Name:</strong> Naveen George Thoppan<br />
       <strong>Contact:</strong> <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a><br />
       <strong>Address:</strong> Ireland
     </p>
@@ -241,11 +241,11 @@
         <tbody>
           <tr><td>Firebase UID (anonymous)</td><td>Firebase Auth (europe-west1)</td><td>Until user deletes app</td><td>Developer via Firebase Console</td></tr>
           <tr><td>Email address (if registered)</td><td>Firebase Auth (europe-west1)</td><td>Until account deleted</td><td>Developer via Firebase Console</td></tr>
-          <tr><td>Display name (if provided)</td><td>SwiftData (device + iCloud)</td><td>Until user deletes</td><td>User only (iCloud encrypted)</td></tr>
-          <tr><td>Stamp records (type, dates, notes)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (iCloud encrypted)</td></tr>
-          <tr><td>Absence records (travel dates, destination)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (iCloud encrypted)</td></tr>
-          <tr><td>Document metadata (filename, type, year)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (iCloud encrypted)</td></tr>
-          <tr><td>Document files (PDF, images)</td><td>User's iCloud container — all subscription tiers. Developer never has access.</td><td>Until deleted by user</td><td>User only (Apple end-to-end encrypted)</td></tr>
+          <tr><td>Display name (if provided)</td><td>SwiftData (device + iCloud)</td><td>Until user deletes</td><td>User only (encrypted in iCloud per Apple's security model)</td></tr>
+          <tr><td>Stamp records (type, dates, notes)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (encrypted in iCloud per Apple's security model)</td></tr>
+          <tr><td>Absence records (travel dates, destination)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (encrypted in iCloud per Apple's security model)</td></tr>
+          <tr><td>Document metadata (filename, type, year)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (encrypted in iCloud per Apple's security model)</td></tr>
+          <tr><td>Document files (PDF, images)</td><td>User's iCloud container — all subscription tiers. Developer never has access.</td><td>Until deleted by user</td><td>User only (encrypted in transit and at rest under Apple's iCloud security policies)</td></tr>
           <tr><td>OCR text (from scan — transient)</td><td>Memory only — never persisted</td><td>Duration of scan session only</td><td>On-device only</td></tr>
         </tbody>
       </table>
@@ -284,7 +284,7 @@
     <p>You can request a copy of all personal data held about you. We will respond within 30 days. Contact: <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a>. Data provided: Firebase account record, stamp records exported as JSON.</p>
 
     <h3>3.2 Right to Erasure (Article 17)</h3>
-    <p>Deleting the app removes all SwiftData records and iCloud documents. You can delete your Firebase account via <strong>Settings → Delete My Account</strong> in the app. Firebase anonymous accounts auto-expire after 30 days of inactivity.</p>
+    <p>You can delete your Firebase account and all on-device records via <strong>Settings → Delete My Account</strong> in the app. To remove iCloud documents, delete the app on all your signed-in devices or use the Files app to remove files from the Granted iCloud folder. Anonymous Firebase accounts that have been inactive for an extended period may be removed by Firebase.</p>
 
     <h3>3.3 Right to Data Portability (Article 20)</h3>
     <p>You can export your stamp records as a JSON or CSV file from the Settings screen at any time.</p>
