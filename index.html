@@ -739,6 +739,7 @@
     }
     .ti-viewport img {
       width: 100%;
+      height: auto;
       display: block;
       animation: ti-scroll 28s cubic-bezier(0.4,0,0.4,1) infinite alternate;
     }
@@ -755,7 +756,7 @@
     }
     @keyframes ti-scroll {
       0%   { transform: translateY(0); }
-      100% { transform: translateY(calc(-100% + var(--viewport-h))); }
+      100% { transform: translateY(var(--scroll-end, 0)); }
     }
     @keyframes ti-pulse {
       0%   { box-shadow: 0 0 0 0 rgba(255,149,0,0.55); }
@@ -974,7 +975,7 @@
       <div class="ti-phone hp-center-ti">
         <div class="ti-chrome ti-top"></div>
         <div class="ti-viewport">
-          <img src="screenshots/application_timeline_light_full_content.png" alt="Application Timeline scrolling through all 14 ISD stages" loading="eager" />
+          <img src="screenshots/application_timeline_light_full_content.png" alt="Application Timeline scrolling through all 14 ISD stages" width="1206" height="8218" loading="eager" />
         </div>
         <div class="ti-chrome ti-bot"></div>
         <span class="ti-live-dot" aria-hidden="true"></span>
@@ -1004,7 +1005,7 @@
         <div class="ti-phone ti-phone--large">
           <div class="ti-chrome ti-top"></div>
           <div class="ti-viewport">
-            <img src="screenshots/application_timeline_light_full_content.png" alt="" loading="lazy" />
+            <img src="screenshots/application_timeline_light_full_content.png" alt="" width="1206" height="8218" loading="eager" />
           </div>
           <div class="ti-chrome ti-bot"></div>
           <span class="ti-live-dot" aria-hidden="true"></span>
@@ -1360,6 +1361,33 @@
   </footer>
 
   <script>
+    // Set --scroll-end on each scrolling phone once the image's intrinsic
+    // size is known, so the animation lands precisely with the image's
+    // bottom aligned to the viewport bottom (no blank gap from a stale
+    // calc against unloaded image height).
+    (function () {
+      function setEnd(phone) {
+        var vp = phone.querySelector('.ti-viewport');
+        var img = vp && vp.querySelector('img');
+        if (!vp || !img) return;
+        if (!img.complete || img.naturalHeight === 0) {
+          img.addEventListener('load', function () { setEnd(phone); }, { once: true });
+          return;
+        }
+        var dist = vp.offsetHeight - img.offsetHeight;
+        phone.style.setProperty('--scroll-end', dist + 'px');
+      }
+      function refresh() {
+        document.querySelectorAll('.ti-phone').forEach(setEnd);
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', refresh);
+      } else {
+        refresh();
+      }
+      window.addEventListener('resize', refresh);
+    })();
+
     (function () {
       var toggle = document.querySelector('.nav-toggle');
       var menu = document.getElementById('nav-menu');
