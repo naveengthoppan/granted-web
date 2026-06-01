@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Granted</title>
+  <meta name="description" content="Get help with Granted — Irish citizenship eligibility tracker. FAQs, contact information, and useful links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-900:    #021E12;
+      --green-700:    #0A5C38;
+      --green-600:    #0F7A4A;
+      --green-500:    #169B62;
+      --green-300:    #6EC4A5;
+      --green-100:    #D6F0E4;
+      --green-50:     #F0FAF5;
+      --amber:        #FF9500;
+      --neutral-900:  #1C1C1E;
+      --neutral-600:  #636366;
+      --white:        #ffffff;
+
+      --green-deep:   var(--green-900);
+      --green-mid:    var(--green-700);
+      --green-light:  var(--green-500);
+      --gold:         var(--amber);
+      --cream:        var(--green-50);
+      --cream-dim:    var(--green-100);
+      --text-main:    var(--neutral-900);
+      --text-muted:   var(--neutral-600);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--cream-dim);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 600;
+      color: var(--green-deep); text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.875rem; font-weight: 400;
+      color: var(--text-muted); text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--green-deep); }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--green-deep);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+    .page-header .eyebrow {
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600; color: var(--white);
+    }
+    .page-header .meta {
+      margin-top: 1rem;
+      font-size: 0.85rem; color: rgba(255,255,255,0.5);
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 760px; margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--green-deep);
+      margin-top: 3rem; margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--cream-dim);
+    }
+    .content p {
+      font-size: 0.95rem; line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .content a {
+      color: var(--green-light);
+      text-decoration: underline;
+    }
+    .content strong { color: var(--text-main); font-weight: 500; }
+    .content ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .content li {
+      font-size: 0.95rem; line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--cream-dim);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .contact-card .contact-row {
+      display: flex; align-items: baseline; gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+    .contact-card .contact-label {
+      font-weight: 500; color: var(--text-main);
+      min-width: 7rem;
+      flex-shrink: 0;
+    }
+    .contact-card .contact-value {
+      color: var(--text-muted);
+    }
+    .contact-card .contact-value a {
+      color: var(--green-light);
+      text-decoration: underline;
+    }
+
+    /* FAQ */
+    .faq-list {
+      margin-top: 1.5rem;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--cream-dim);
+    }
+    .faq-item:first-child {
+      border-top: 1px solid var(--cream-dim);
+    }
+    .faq-question {
+      width: 100%; background: none; border: none; cursor: pointer;
+      text-align: left;
+      padding: 1.1rem 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 500;
+      color: var(--text-main);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--green-mid); }
+    .faq-question .faq-icon {
+      flex-shrink: 0;
+      width: 1.25rem; height: 1.25rem;
+      border-radius: 50%;
+      border: 1.5px solid var(--cream-dim);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; color: var(--text-muted);
+      transition: transform 0.25s, background 0.2s, border-color 0.2s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--green-deep);
+      border-color: var(--green-deep);
+      color: var(--white);
+    }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.2s;
+      padding-bottom: 0;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 600px;
+      padding-bottom: 1.1rem;
+    }
+    .faq-answer p {
+      font-size: 0.9rem; line-height: 1.7;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* LINKS */
+    .links-list {
+      list-style: none; padding: 0;
+      margin-top: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .links-list li a {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--green-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .links-list li a:hover { color: var(--green-mid); text-decoration: underline; }
+    .links-list li a::before {
+      content: '→';
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: rgba(255,149,0,0.08);
+      border: 1px solid rgba(255,149,0,0.26);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .highlight-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--cream-dim);
+      padding: 2rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--green-deep); font-weight: 600;
+    }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.82rem; color: var(--text-muted);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--green-deep); }
+    .footer-copy { font-size: 0.78rem; color: var(--text-muted); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .contact-card .contact-row { flex-direction: column; gap: 0.2rem; }
+      .contact-card .contact-label { min-width: unset; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="/">Granted</a>
+    <a class="nav-back" href="/">← Back to home</a>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">Help &amp; Support</p>
+    <h1>Support</h1>
+    <p class="meta">We're here to help with questions about Granted</p>
+  </div>
+
+  <div class="content">
+
+    <!-- CONTACT -->
+    <h2>Contact Us</h2>
+    <p>Have a question, found a bug, or need help with your account? Reach out and we'll get back to you as soon as possible.</p>
+
+    <div class="contact-card">
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <span class="contact-value"><a href="mailto:support@getgranted.ie">support@getgranted.ie</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Response time</span>
+        <span class="contact-value">We aim to respond within 2 business days</span>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How is my eligibility date calculated?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Your eligibility date is calculated based on your reckonable stamps, the 5-year residency rule, the 12-month continuous residence requirement, and your 70-day absence limit — all under Irish naturalisation law. Granted applies these rules automatically as you add your stamp history.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What stamps count toward citizenship?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Stamps 1, 1G, 3, 4, 4D, 4EUFAM, and 5 count toward your reckonable residence. Stamps 0, 1A, 2, and 2A do not count.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is my IRP card stored anywhere?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>No. The OCR scan extracts text from your card entirely on-device. The image is never saved to disk and is never sent anywhere — it exists only in memory during the scan and is discarded immediately afterwards.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Where is my data stored?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Your stamps, absences, and documents are stored in your own iCloud account. Nothing is stored on our servers. The developer never has access to your personal immigration data.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I use the app without signing in?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Yes. You can explore the stamp tracker as a guest with no account required. Sign in with Apple to back up your data to iCloud and restore it if you change devices.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How do I cancel or get a refund?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Granted uses one-time purchases managed entirely by Apple. To request a refund, visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> — Apple handles all billing and refund decisions.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is the difference between Pro and Family?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>Pro adds the Document Vault, OCR scanning, and the Application Timeline. Family includes everything in Pro, plus support for up to 5 family member profiles — useful for tracking eligibility for your whole household.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Is Granted a legal advisor?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer" role="region">
+          <p>No. Granted is a tool to help you understand and track your own immigration history. It does not provide legal advice. Always verify your eligibility with INIS or a qualified immigration solicitor before submitting a naturalisation application.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LINKS -->
+    <h2>Useful Links</h2>
+
+    <div class="highlight-box">
+      <p>For refund requests, use Apple's official channel below — we are unable to process refunds directly as all purchases go through the App Store.</p>
+    </div>
+
+    <ul class="links-list">
+      <li><a href="/privacy.html">Privacy Policy</a></li>
+      <li><a href="/terms.html">Terms of Use</a></li>
+      <li><a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">Request a refund from Apple</a></li>
+      <li><a href="https://www.irishimmigration.ie" target="_blank" rel="noopener">INIS — Irish Immigration Service (irishimmigration.ie)</a></li>
+    </ul>
+
+  </div>
+
+  <footer>
+    <span class="footer-logo">Granted</span>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+      <a href="/support.html">Support</a>
+    </div>
+    <span class="footer-copy">© 2026 Granted. Made in Ireland.</span>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(el => {
+          el.classList.remove('open');
+          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
