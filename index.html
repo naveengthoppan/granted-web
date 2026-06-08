@@ -286,91 +286,22 @@
       color: var(--green-300);
     }
 
-    /* ── PRICING ── */
-    .pricing-section {
+    /* ── SURVEY ── */
+    .survey-section {
       padding: 6rem 2rem;
-      max-width: 900px;
+      max-width: 760px;
       margin: 0 auto;
       text-align: center;
     }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-      text-align: left;
-    }
-    .pricing-card {
+    .survey-embed-wrap {
+      margin-top: 3rem;
       background: var(--white);
       border: 1px solid var(--cream-dim);
       border-radius: 20px;
       padding: 2.5rem 2rem;
-      transition: border-color 0.2s, transform 0.2s;
+      text-align: left;
+      overflow: hidden;
     }
-    .pricing-card:hover { border-color: rgba(22,155,98,0.4); transform: translateY(-3px); }
-    .pricing-card.featured {
-      background: var(--green-900);
-      border-color: var(--green-900);
-    }
-    .pricing-card.featured h3,
-    .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.85); }
-    .pricing-card.featured .pricing-price { color: var(--white); }
-    .pricing-card.featured .pricing-price span { color: rgba(255,255,255,0.6); }
-    .pricing-card.featured .pricing-label { color: var(--green-300); }
-    .pricing-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green-500);
-      margin-bottom: 0.75rem;
-    }
-    .pricing-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--green-deep);
-      margin-bottom: 0.5rem;
-    }
-    .pricing-price {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: var(--green-deep);
-      line-height: 1;
-      margin: 1rem 0 0.25rem;
-    }
-    .pricing-price span {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: var(--text-muted);
-    }
-    .pricing-once {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-    .pricing-card.featured .pricing-once { color: rgba(255,255,255,0.5); }
-    .pricing-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .pricing-features li {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      line-height: 1.5;
-    }
-    .pricing-features li::before {
-      content: '✓';
-      color: var(--green-500);
-      font-weight: 600;
-      flex-shrink: 0;
-    }
-    .pricing-card.featured .pricing-features li::before { color: var(--green-300); }
 
     /* ── TRUST / GDPR BANNER ── */
     .trust-section {
@@ -944,7 +875,7 @@
     <div class="nav-links" id="nav-menu">
       <a href="#application-tracking">Application Tracking</a>
       <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#survey">Survey</a>
       <a href="/citizenship.html">Citizenship Guide</a>
       <a href="#story">Our Story</a>
       <a href="/privacy.html">Privacy</a>
@@ -1037,7 +968,7 @@
       </div>
       <div class="day-one-cta">
         <a href="/citizenship.html" class="btn-primary">Read the Citizenship Guide →</a>
-        <a href="#pricing" style="display: block; text-align: center; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; padding-top: 0.25rem;">or see pricing ↓</a>
+        <a href="#survey" style="display: block; text-align: center; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; padding-top: 0.25rem;">or take the survey ↓</a>
       </div>
     </div>
   </section>
@@ -1252,58 +1183,20 @@
     <p style="margin-top:2rem;font-size:0.8rem;color:rgba(255,255,255,0.45);letter-spacing:0.04em;">Highlighted stamps count toward citizenship eligibility (reckonable residence)</p>
   </section>
 
-  <!-- PRICING -->
-  <section class="pricing-section" id="pricing">
-    <p class="section-label">Simple pricing</p>
-    <h2 class="section-title" style="margin:0 auto;">Pay once. Yours forever.</h2>
-    <p style="margin-top:1rem;font-size:0.95rem;color:var(--text-muted);max-width:440px;margin-left:auto;margin-right:auto;">
-      No subscriptions. No monthly fees. Buy Pro or Family once and keep it for life.
+  <!-- SURVEY -->
+  <section class="survey-section" id="survey">
+    <p class="section-label">Help shape Granted</p>
+    <h2 class="section-title" style="margin:0 auto;">2 minutes. Real impact.</h2>
+    <p style="margin-top:1rem;font-size:0.95rem;color:var(--text-muted);max-width:520px;margin-left:auto;margin-right:auto;">
+      We're building Granted for people who've lived the Irish immigration journey — not what we assume it's like. Tell us your experience and what matters most. Your answers directly shape what we build and how we price it.
     </p>
-    <div class="pricing-grid">
-
-      <div class="pricing-card">
-        <p class="pricing-label">Free</p>
-        <h3>Core</h3>
-        <div class="pricing-price">€0</div>
-        <p class="pricing-once">Always free</p>
-        <ul class="pricing-features">
-          <li>Stamp tracker (manual entry)</li>
-          <li>Citizenship eligibility countdown</li>
-          <li>Travel absence log</li>
-          <li>Renewal reminders (90, 60, 30 days)</li>
-          <li>Stamp info library</li>
-          <li>Application Timeline (14-stage tracker)</li>
-          <li>No account required</li>
-        </ul>
-      </div>
-
-      <div class="pricing-card featured">
-        <p class="pricing-label">One-time purchase</p>
-        <h3>Pro</h3>
-        <div class="pricing-price">€49.99 <span>once</span></div>
-        <p class="pricing-once">Lifetime access · no renewal</p>
-        <ul class="pricing-features">
-          <li>Everything in Core</li>
-          <li>IRP card scanning (camera OCR)</li>
-          <li>Document Vault (iCloud storage)</li>
-          <li>AI Eligibility Q&amp;A</li>
-        </ul>
-      </div>
-
-      <div class="pricing-card">
-        <p class="pricing-label">One-time purchase</p>
-        <h3>Family</h3>
-        <div class="pricing-price">€79.99 <span>once</span></div>
-        <p class="pricing-once">Lifetime access · no renewal</p>
-        <ul class="pricing-features">
-          <li>Everything in Pro</li>
-          <li>Up to 5 family member profiles</li>
-          <li>Shared document vault</li>
-          <li>Individual eligibility tracking per member</li>
-        </ul>
-      </div>
-
+    <div class="survey-embed-wrap">
+      <iframe data-tally-src="https://tally.so/embed/PdrydV?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Help Shape Granted — Survey"></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
     </div>
+    <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--text-muted);">
+      Prefer to open in a new tab? <a href="https://tally.so/r/PdrydV" target="_blank" rel="noopener" style="color:var(--green-500);text-decoration:none;">Take the survey →</a>
+    </p>
   </section>
 
   <!-- FOUNDER STORY -->
