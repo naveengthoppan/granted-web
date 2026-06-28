@@ -192,18 +192,18 @@
   <div class="page-header">
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Version 1.1 · Effective 27 March 2026 · Last updated May 2026</p>
+    <p class="meta">Version 1.2 · Effective 27 March 2026 · Last updated 28 June 2026</p>
   </div>
 
   <div class="content">
 
     <div class="highlight-box">
-      <p><strong>Plain-language summary:</strong> Granted stores your immigration data on your own device and iCloud. We never sell your data, never show ads, and you can delete everything at any time. Your documents are yours.</p>
+      <p><strong>Plain-language summary:</strong> Granted stores your immigration data on your own device only. Your documents are saved in your own iCloud, where only you can access them. We never sell your data, never show ads, and you can delete everything at any time. Your documents are yours.</p>
     </div>
 
     <h2>1. Overview</h2>
     <p>Granted processes personal data belonging to non-EU nationals living in Ireland. This data includes immigration status, document metadata, and identity information used for authentication. This policy defines how that data is collected, stored, processed, and protected in compliance with the <strong>General Data Protection Regulation (GDPR)</strong> and the <strong>Irish Data Protection Acts 2018</strong>.</p>
-    <p>As the developer and operator of Granted, the individual developer acts as the <strong>Data Controller</strong> for all personal data processed through the app. Third-party services (Firebase, Anthropic, Apple iCloud, RevenueCat) act as Data Processors under their respective data processing agreements.</p>
+    <p>As the developer and operator of Granted, the individual developer acts as the <strong>Data Controller</strong> for all personal data processed through the app. Third-party services (Firebase / Google, Apple iCloud, RevenueCat) act as Data Processors under their respective data processing agreements. Anthropic is named in this policy for transparency only — the AI-assisted features that would use it are not currently active (see §2.4).</p>
 
     <h3>1.1 Data Controller</h3>
     <p>
@@ -224,8 +224,9 @@
           <tr><td>Firebase UID + email (registered users)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
           <tr><td>Stamp records (IRP type, dates)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
           <tr><td>Absence records (travel dates, destination)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
-          <tr><td>OCR text from IRP card scan</td><td>Consent</td><td>Art. 6(1)(a) — Pro feature opt-in</td></tr>
           <tr><td>Document metadata (filename, type, year)</td><td>Consent</td><td>Art. 6(1)(a) — Pro feature opt-in</td></tr>
+          <tr><td>Application Timeline submission (anonymous milestone dates)</td><td>Consent</td><td>Art. 6(1)(a) — opt-in sharing</td></tr>
+          <tr><td>OCR text from IRP card scan (planned — not currently active)</td><td>Consent</td><td>Art. 6(1)(a) — Pro feature opt-in</td></tr>
         </tbody>
       </table>
     </div>
@@ -239,21 +240,22 @@
           <tr><th>Data</th><th>Where stored</th><th>Retention</th><th>Who can access</th></tr>
         </thead>
         <tbody>
-          <tr><td>Firebase UID (anonymous)</td><td>Firebase Auth (europe-west1)</td><td>Until user deletes app</td><td>Developer via Firebase Console</td></tr>
-          <tr><td>Email address (if registered)</td><td>Firebase Auth (europe-west1)</td><td>Until account deleted</td><td>Developer via Firebase Console</td></tr>
-          <tr><td>Display name (if provided)</td><td>SwiftData (device + iCloud)</td><td>Until user deletes</td><td>User only (encrypted in iCloud per Apple's security model)</td></tr>
-          <tr><td>Stamp records (type, dates, notes)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (encrypted in iCloud per Apple's security model)</td></tr>
-          <tr><td>Absence records (travel dates, destination)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (encrypted in iCloud per Apple's security model)</td></tr>
-          <tr><td>Document metadata (filename, type, year)</td><td>SwiftData + iCloud</td><td>Until deleted by user</td><td>User only (encrypted in iCloud per Apple's security model)</td></tr>
+          <!-- TODO: Verify Firebase Auth processing region and update before launch. -->
+          <tr><td>Firebase UID (anonymous)</td><td>Firebase Auth (Google)</td><td>Until user deletes app</td><td>Developer via Firebase Console</td></tr>
+          <tr><td>Email address (if registered)</td><td>Firebase Auth (Google)</td><td>Until account deleted</td><td>Developer via Firebase Console</td></tr>
+          <tr><td>Display name (if provided)</td><td>SwiftData (on-device only)</td><td>Until user deletes</td><td>User only (on device)</td></tr>
+          <tr><td>Stamp records (type, dates, notes)</td><td>SwiftData (on-device only)</td><td>Until deleted by user</td><td>User only (on device)</td></tr>
+          <tr><td>Absence records (travel dates, destination)</td><td>SwiftData (on-device only)</td><td>Until deleted by user</td><td>User only (on device)</td></tr>
+          <tr><td>Document metadata (filename, type, year)</td><td>SwiftData (on-device only)</td><td>Until deleted by user</td><td>User only (on device)</td></tr>
           <tr><td>Document files (PDF, images)</td><td>User's iCloud container — all subscription tiers. Developer never has access.</td><td>Until deleted by user</td><td>User only (encrypted in transit and at rest under Apple's iCloud security policies)</td></tr>
-          <tr><td>OCR text (from scan — transient)</td><td>Memory only — never persisted</td><td>Duration of scan session only</td><td>On-device only</td></tr>
+          <tr><td>Application Timeline submission (anonymous, opt-in)</td><td>Firebase Firestore (Google)</td><td>Deleted after 3 years</td><td>Anonymous — not linked to device or account (see §2.5)</td></tr>
         </tbody>
       </table>
     </div>
 
     <h3>2.2 Data We Do NOT Store</h3>
     <ul>
-      <li>IRP card photographs — images are held in memory only during OCR extraction, then immediately discarded</li>
+      <li>IRP card photographs — card scanning (OCR) is not enabled in the current release; if activated in a future release, images would be held in memory only during extraction, then immediately discarded</li>
       <li>Passport photographs or biometric data of any kind</li>
       <li>Payment information — all payment processing is handled exclusively by Apple and RevenueCat</li>
       <li>Location data — the app never requests location permission</li>
@@ -269,13 +271,27 @@
           <tr><th>Processor</th><th>Location</th><th>Data Shared</th></tr>
         </thead>
         <tbody>
-          <tr><td>Firebase (Google)</td><td>europe-west1 (Belgium)</td><td>Firebase UID, email address, authentication tokens. Google's <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener">Firebase Data Processing and Security Terms</a> apply automatically upon accepting Firebase's Terms of Service — no separately executed DPA is required.</td></tr>
-          <tr><td>Anthropic (AI / OCR fallback)</td><td>USA</td><td>Raw OCR text from IRP card scan (stamp type, dates, name as text string). No image. No biometrics. SCCs cover EU–US transfer.</td></tr>
-          <tr><td>Apple iCloud</td><td>User's iCloud region</td><td>All user data stored in iCloud is processed under Apple's own DPA. Developer never has access.</td></tr>
+          <!-- TODO: Verify Firebase processing region (Auth + Firestore) and update before launch. -->
+          <tr><td>Firebase / Firestore (Google)</td><td>Processed by Google under its data-processing terms</td><td>Firebase Auth: UID, email address, authentication tokens. Firestore: anonymous Application Timeline submissions only (see §2.5). Google's <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener">Firebase Data Processing and Security Terms</a> apply automatically upon accepting Firebase's Terms of Service — no separately executed DPA is required.</td></tr>
+          <tr><td>Anthropic (AI — not currently active)</td><td>USA (planned)</td><td>No data is sent to Anthropic in the current release. AI-assisted features (card scanning, eligibility chat) are disabled; if enabled in a future release this policy will be updated before any data is transferred. SCCs would cover any future EU–US transfer.</td></tr>
+          <tr><td>Apple iCloud</td><td>User's iCloud region</td><td>Document files (PDFs, images) only. Processed under Apple's own DPA. Developer never has access.</td></tr>
           <tr><td>RevenueCat</td><td>USA</td><td>Apple ID receipt data (subscription status only). No payment card data. SCCs apply.</td></tr>
         </tbody>
       </table>
     </div>
+
+    <h3>2.4 AI Features (Not Currently Active)</h3>
+    <p>Earlier versions of this policy described AI-assisted features — IRP card scanning via optical character recognition (OCR) and an AI eligibility chat — that would send text to Anthropic in the United States. <strong>These features are disabled in the current release and no data is sent to Anthropic.</strong> No names, OCR text, or other personal data are transmitted to the United States by the app. If these features are introduced in a future release, this policy will be updated and the relevant consent and transfer disclosures provided before any data is processed.</p>
+
+    <h3>2.5 Application Timeline (Opt-In Community Sharing)</h3>
+    <p>The app includes an optional, community-powered <strong>Application Timeline</strong> feature. It is off by default and only operates when you actively choose to share.</p>
+    <ul>
+      <li><strong>What is shared:</strong> when you choose to contribute, the app sends a single anonymous submission to Firebase Firestore (Google) consisting of a randomly generated identifier (not linked to your device or account), your country code, and your application <strong>milestone dates only</strong>. No name, no document content, and no device or account identifiers are included.</li>
+      <li><strong>Legal basis:</strong> consent (GDPR Art. 6(1)(a)). Sharing requires a registered (non-anonymous) account and is entirely voluntary.</li>
+      <li><strong>Retention:</strong> shared submissions are deleted after 3 years.</li>
+      <li><strong>Your control:</strong> you can remove your shared data at any time from within the app.</li>
+      <li><strong>Reading benchmarks and news:</strong> the app also reads anonymous, aggregate community benchmarks and immigration news. Reading this content involves no personal data and does not require an account.</li>
+    </ul>
 
     <h2>3. Your Rights</h2>
     <p>Under GDPR, you have the following rights:</p>
@@ -287,7 +303,8 @@
     <p><strong>Settings → Delete My Account</strong> removes your Firebase account, all on-device records, and your documents from your iCloud Drive (including any family-member document folders) in a single action. The deletion runs in two passes: per-document removal for any files tracked in metadata, followed by a sweep of your entire iCloud subtree to catch any orphan files. Anonymous Firebase accounts that have been inactive for an extended period may additionally be removed by Firebase.</p>
 
     <h3>3.3 Right to Data Portability (Article 20)</h3>
-    <p>You can export your stamp records as a JSON or CSV file from the Settings screen at any time.</p>
+    <!-- TODO: Revert to in-app JSON/CSV export wording once the in-app export feature ships. -->
+    <p>You can request a copy of your stamp records by emailing <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a>. We will provide your data in a structured, machine-readable format (JSON or CSV) within 30 days.</p>
 
     <h3>3.4 Right to Withdraw Consent</h3>
     <p>You can withdraw consent at any time by signing out. Anonymous sessions hold no personal data and do not require consent withdrawal. Signing out terminates the Firebase session. Stamp data remains on your device until you delete the app.</p>
