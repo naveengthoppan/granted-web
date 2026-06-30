@@ -192,13 +192,13 @@
   <div class="page-header">
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Version 1.2 · Effective 27 March 2026 · Last updated 28 June 2026</p>
+    <p class="meta">Version 1.3 · Effective 27 March 2026 · Last updated 30 June 2026</p>
   </div>
 
   <div class="content">
 
     <div class="highlight-box">
-      <p><strong>Plain-language summary:</strong> Granted stores your immigration data on your own device only. Your documents are saved in your own iCloud, where only you can access them. We never sell your data, never show ads, and you can delete everything at any time. Your documents are yours.</p>
+      <p><strong>Plain-language summary:</strong> Granted keeps your immigration records on your device and in your own iCloud, where only you can access them. The only things on our servers are your sign-in details and any anonymous community timeline you choose to share. We never sell your data, never show ads, and you can delete everything at any time. Your documents are yours.</p>
     </div>
 
     <h2>1. Overview</h2>
@@ -221,12 +221,12 @@
         </thead>
         <tbody>
           <tr><td>Anonymous session (no personal data)</td><td>Legitimate interest</td><td>Art. 6(1)(f)</td></tr>
-          <tr><td>Firebase UID + email (registered users)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
-          <tr><td>Stamp records (IRP type, dates)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
-          <tr><td>Absence records (travel dates, destination)</td><td>Consent</td><td>Art. 6(1)(a)</td></tr>
-          <tr><td>Document metadata (filename, type, year)</td><td>Consent</td><td>Art. 6(1)(a) — Pro feature opt-in</td></tr>
-          <tr><td>Application Timeline submission (anonymous milestone dates)</td><td>Consent</td><td>Art. 6(1)(a) — opt-in sharing</td></tr>
-          <tr><td>OCR text from IRP card scan (planned — not currently active)</td><td>Consent</td><td>Art. 6(1)(a) — Pro feature opt-in</td></tr>
+          <tr><td>Firebase UID + email (registered users)</td><td>Contract — to create and operate your account</td><td>Art. 6(1)(b)</td></tr>
+          <tr><td>Stamp records (IRP type, dates)</td><td>Contract — to provide the app's core tracking functionality</td><td>Art. 6(1)(b)</td></tr>
+          <tr><td>Absence records (travel dates, destination)</td><td>Contract — to provide the app's core tracking functionality</td><td>Art. 6(1)(b)</td></tr>
+          <tr><td>Document metadata (filename, type, year)</td><td>Contract — to provide the Pro Document Vault you purchase</td><td>Art. 6(1)(b)</td></tr>
+          <tr><td>Application Timeline submission (anonymous milestone dates)</td><td>Consent — optional community sharing</td><td>Art. 6(1)(a)</td></tr>
+          <tr><td>OCR text from IRP card scan (planned — not currently active)</td><td>Consent — optional Pro feature, if introduced</td><td>Art. 6(1)(a)</td></tr>
         </tbody>
       </table>
     </div>
@@ -240,7 +240,6 @@
           <tr><th>Data</th><th>Where stored</th><th>Retention</th><th>Who can access</th></tr>
         </thead>
         <tbody>
-          <!-- TODO: Verify Firebase Auth processing region and update before launch. -->
           <tr><td>Firebase UID (anonymous)</td><td>Firebase Auth (Google)</td><td>Until user deletes app</td><td>Developer via Firebase Console</td></tr>
           <tr><td>Email address (if registered)</td><td>Firebase Auth (Google)</td><td>Until account deleted</td><td>Developer via Firebase Console</td></tr>
           <tr><td>Display name (if provided)</td><td>SwiftData (on-device only)</td><td>Until user deletes</td><td>User only (on device)</td></tr>
@@ -271,8 +270,7 @@
           <tr><th>Processor</th><th>Location</th><th>Data Shared</th></tr>
         </thead>
         <tbody>
-          <!-- TODO: Verify Firebase processing region (Auth + Firestore) and update before launch. -->
-          <tr><td>Firebase / Firestore (Google)</td><td>Processed by Google under its data-processing terms</td><td>Firebase Auth: UID, email address, authentication tokens. Firestore: anonymous Application Timeline submissions only (see §2.5). Google's <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener">Firebase Data Processing and Security Terms</a> apply automatically upon accepting Firebase's Terms of Service — no separately executed DPA is required.</td></tr>
+          <tr><td>Firebase / Firestore (Google)</td><td>EU/EEA where available; any transfer outside the EEA is covered by Google's Standard Contractual Clauses and EU–US Data Privacy Framework certification (GDPR Art. 46)</td><td>Firebase Auth: UID, email address, authentication tokens. Firestore: anonymous Application Timeline submissions only (see §2.5). Google's <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener">Firebase Data Processing and Security Terms</a> apply automatically upon accepting Firebase's Terms of Service.</td></tr>
           <tr><td>Anthropic (AI — not currently active)</td><td>USA (planned)</td><td>No data is sent to Anthropic in the current release. AI-assisted features (card scanning, eligibility chat) are disabled; if enabled in a future release this policy will be updated before any data is transferred. SCCs would cover any future EU–US transfer.</td></tr>
           <tr><td>Apple iCloud</td><td>User's iCloud region</td><td>Document files (PDFs, images) only. Processed under Apple's own DPA. Developer never has access.</td></tr>
           <tr><td>RevenueCat</td><td>USA</td><td>Apple ID receipt data (subscription status only). No payment card data. SCCs apply.</td></tr>
@@ -303,13 +301,24 @@
     <p><strong>Settings → Delete My Account</strong> removes your Firebase account, all on-device records, and your documents from your iCloud Drive (including any family-member document folders) in a single action. The deletion runs in two passes: per-document removal for any files tracked in metadata, followed by a sweep of your entire iCloud subtree to catch any orphan files. Anonymous Firebase accounts that have been inactive for an extended period may additionally be removed by Firebase.</p>
 
     <h3>3.3 Right to Data Portability (Article 20)</h3>
-    <!-- TODO: Revert to in-app JSON/CSV export wording once the in-app export feature ships. -->
     <p>You can request a copy of your stamp records by emailing <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a>. We will provide your data in a structured, machine-readable format (JSON or CSV) within 30 days.</p>
 
     <h3>3.4 Right to Withdraw Consent</h3>
-    <p>You can withdraw consent at any time by signing out. Anonymous sessions hold no personal data and do not require consent withdrawal. Signing out terminates the Firebase session. Stamp data remains on your device until you delete the app.</p>
+    <p>Where we rely on your consent — the optional Application Timeline sharing — you can withdraw it at any time from within the app ("Remove my shared data"), without affecting the lawfulness of processing before withdrawal. Core account and tracking features rely on contract, not consent; you can stop that processing at any time by deleting your account or the app. Anonymous sessions hold no personal data.</p>
 
-    <h3>3.5 Right to Lodge a Complaint</h3>
+    <h3>3.5 Right to Rectification (Article 16)</h3>
+    <p>You can correct inaccurate personal data. Your display name and email can be edited from the Profile screen; stamp and absence records can be edited or deleted at any time within the app. For the account record we hold, contact <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a>.</p>
+
+    <h3>3.6 Right to Restriction (Article 18)</h3>
+    <p>You can ask us to restrict processing of your account data in the circumstances set out in Article 18 (for example, while a dispute about accuracy is resolved). Contact <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a>.</p>
+
+    <h3>3.7 Right to Object (Article 21)</h3>
+    <p>Where processing is based on our legitimate interests, you can object at any time. Contact <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a>. We do not use your data for direct marketing or profiling.</p>
+
+    <h3>3.8 Automated Decision-Making (Article 22)</h3>
+    <p>Granted's eligibility calculations are tools to help you understand your own records. We do not make decisions about you that produce legal or similarly significant effects based solely on automated processing within the meaning of Article 22 — you always decide what to do with the information, and you should verify it with the Irish Immigration Service (ISD) or a solicitor.</p>
+
+    <h3>3.9 Right to Lodge a Complaint</h3>
     <p>If you believe your data has been handled incorrectly, you have the right to lodge a complaint with the <strong>Data Protection Commission Ireland (DPC)</strong>:<br />
     <a href="https://www.dataprotection.ie" target="_blank" rel="noopener">www.dataprotection.ie</a> · <a href="mailto:info@dataprotection.ie">info@dataprotection.ie</a> · +353 (0)761 104 800</p>
 
