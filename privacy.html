@@ -258,7 +258,7 @@
       <li>Location data — the app never requests location permission</li>
       <li>Device identifiers for advertising — no advertising SDKs are used</li>
       <li>Health or biometric data</li>
-      <li>Children's data — the app is rated 4+ but the immigration context means users are adults</li>
+      <li>Children's data — the app is intended for adults (18+) and is not directed at children; we do not knowingly collect or process children's data</li>
     </ul>
 
     <h3>2.3 Third-Party Data Processors</h3>
@@ -326,7 +326,7 @@
     <ul>
       <li>Anonymous sessions collect zero personal data — the app is fully functional without an account</li>
       <li>Stamp records contain only type and dates — no free-text fields except optional notes</li>
-      <li>OCR pipeline discards the IRP card image immediately after text extraction</li>
+      <li>When IRP card scanning launches, the OCR pipeline will discard the card image immediately after text extraction — the image will never be stored or transmitted</li>
       <li>Only document metadata is stored in SwiftData — not document content</li>
     </ul>
 
@@ -350,7 +350,8 @@
     <ul>
       <li><strong>Contact Info:</strong> Email address — used for account creation, linked to identity</li>
       <li><strong>Identifiers:</strong> Firebase User ID — used for app functionality, linked to identity</li>
-      <li><strong>Usage Data:</strong> Stamp records — used for app functionality, linked to identity</li>
+      <li><strong>Name:</strong> Display name (if provided) — used for app functionality, linked to identity</li>
+      <li>Stamp, absence, and document data stays on your device and in your own iCloud — it is not collected by us and does not leave your control</li>
       <li>No data is used for tracking</li>
       <li>No location, browsing, or health data is collected</li>
     </ul>
