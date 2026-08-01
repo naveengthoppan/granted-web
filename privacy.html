@@ -190,7 +190,7 @@
   <div class="page-header">
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Version 1.6 · Effective 27 March 2026 · Last updated 21 July 2026</p>
+    <p class="meta">Version 1.7 · Effective 27 March 2026 · Last updated 1 August 2026</p>
   </div>
 
   <div class="content">
@@ -238,7 +238,7 @@
           <tr><th>Data</th><th>Where stored</th><th>Retention</th><th>Who can access</th></tr>
         </thead>
         <tbody>
-          <tr><td>Firebase UID (anonymous)</td><td>Firebase Auth (Google)</td><td>Until user deletes app</td><td>Developer via Firebase Console</td></tr>
+          <tr><td>Firebase UID (anonymous)</td><td>Firebase Auth (Google)</td><td>Indefinitely, unless the user deletes their account (Settings → Delete My Account) — no automatic expiry is currently configured</td><td>Developer via Firebase Console</td></tr>
           <tr><td>Email address (if registered)</td><td>Firebase Auth (Google)</td><td>Until account deleted</td><td>Developer via Firebase Console</td></tr>
           <tr><td>Display name (if provided)</td><td>SwiftData (on-device only)</td><td>Until user deletes</td><td>User only (on device)</td></tr>
           <tr><td>Stamp records (type, dates, notes)</td><td>SwiftData (on-device only)</td><td>Until deleted by user</td><td>User only (on device)</td></tr>
@@ -296,7 +296,7 @@
     <p>You can request a copy of all personal data held about you. We will respond within 30 days. Contact: <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a>. Data provided: Firebase account record, stamp records exported as JSON.</p>
 
     <h3>3.2 Right to Erasure (Article 17)</h3>
-    <p><strong>Settings → Delete My Account</strong> removes your Firebase account, all on-device records, and your documents from your iCloud Drive (including any family-member document folders) in a single action. The deletion runs in two passes: per-document removal for any files tracked in metadata, followed by a sweep of your entire iCloud subtree to catch any orphan files. Anonymous Firebase accounts that have been inactive for an extended period may additionally be removed by Firebase.</p>
+    <p><strong>Settings → Delete My Account</strong> removes your Firebase account, all on-device records, and your documents from your iCloud Drive (including any family-member document folders) in a single action. The deletion runs in two passes: per-document removal for any files tracked in metadata, followed by a sweep of your entire iCloud subtree to catch any orphan files. Anonymous sessions that are never converted into a registered account are not automatically deleted by Firebase — deleting your account through the app is the only way to remove one.</p>
 
     <h3>3.3 Right to Data Portability (Article 20)</h3>
     <p>You can export your data at any time from within the app: <strong>Profile → Export My Data</strong> provides your stamp and absence records in structured, machine-readable JSON and CSV formats, delivered immediately via the iOS share sheet — no request needed. If you prefer, or no longer have access to the app, you can also email <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a> and we will provide the same export within 30 days.</p>
@@ -338,7 +338,7 @@
 
     <h3>4.3 Security Measures</h3>
     <ul>
-      <li>All iCloud data protected by Apple's end-to-end encryption</li>
+      <li>All iCloud data is encrypted in transit and at rest under Apple's standard iCloud security policies</li>
       <li>Firebase Security Rules prevent any cross-user data access</li>
       <li>All network connections use TLS (App Transport Security enforced)</li>
       <li>No hardcoded credentials in source code</li>
