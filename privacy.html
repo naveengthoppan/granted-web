@@ -190,7 +190,7 @@
   <div class="page-header">
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Version 1.7 · Effective 27 March 2026 · Last updated 1 August 2026</p>
+    <p class="meta">Version 1.8 · Effective 27 March 2026 · Last updated 2 August 2026</p>
   </div>
 
   <div class="content">
@@ -240,10 +240,10 @@
         <tbody>
           <tr><td>Firebase UID (anonymous)</td><td>Firebase Auth (Google)</td><td>Indefinitely, unless the user deletes their account (Settings → Delete My Account) — no automatic expiry is currently configured</td><td>Developer via Firebase Console</td></tr>
           <tr><td>Email address (if registered)</td><td>Firebase Auth (Google)</td><td>Until account deleted</td><td>Developer via Firebase Console</td></tr>
-          <tr><td>Display name (if provided)</td><td>SwiftData (on-device only)</td><td>Until user deletes</td><td>User only (on device)</td></tr>
-          <tr><td>Stamp records (type, dates, notes)</td><td>SwiftData (on-device only)</td><td>Until deleted by user</td><td>User only (on device)</td></tr>
-          <tr><td>Absence records (travel dates, destination)</td><td>SwiftData (on-device only)</td><td>Until deleted by user</td><td>User only (on device)</td></tr>
-          <tr><td>Document metadata (filename, type, year)</td><td>SwiftData (on-device only)</td><td>Until deleted by user</td><td>User only (on device)</td></tr>
+          <tr><td>Display name (if provided)</td><td>SwiftData, synced via Apple CloudKit to your own iCloud so it follows you across your own devices. Developer never has access.</td><td>Until user deletes</td><td>User only (on your own signed-in devices)</td></tr>
+          <tr><td>Stamp records (type, dates, notes)</td><td>SwiftData, synced via Apple CloudKit to your own iCloud so it follows you across your own devices. Developer never has access.</td><td>Until deleted by user</td><td>User only (on your own signed-in devices)</td></tr>
+          <tr><td>Absence records (travel dates, destination)</td><td>SwiftData, synced via Apple CloudKit to your own iCloud so it follows you across your own devices. Developer never has access.</td><td>Until deleted by user</td><td>User only (on your own signed-in devices)</td></tr>
+          <tr><td>Document metadata (filename, type, year)</td><td>SwiftData, synced via Apple CloudKit to your own iCloud so it follows you across your own devices. Developer never has access.</td><td>Until deleted by user</td><td>User only (on your own signed-in devices)</td></tr>
           <tr><td>Document files (PDF, images)</td><td>User's iCloud container — all subscription tiers. Developer never has access.</td><td>Until deleted by user</td><td>User only (encrypted in transit and at rest under Apple's iCloud security policies)</td></tr>
           <tr><td>Application Timeline submission (anonymous, opt-in)</td><td>Firebase Firestore (Google)</td><td>Deleted after 3 years</td><td>Anonymous — not linked to device or account (see §2.5)</td></tr>
         </tbody>
@@ -270,7 +270,7 @@
         <tbody>
           <tr><td>Firebase / Firestore (Google)</td><td>Firestore is hosted in the <strong>europe-west1</strong> region (Belgium, EU) — your anonymous Application Timeline data does not leave the EU. Firebase Authentication does not offer a selectable region; any transfer outside the EEA is covered by Google's Standard Contractual Clauses and EU–US Data Privacy Framework certification (GDPR Art. 46)</td><td>Firebase Auth: UID, email address, authentication tokens. Firestore: anonymous Application Timeline submissions only (see §2.5). Google's <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener">Firebase Data Processing and Security Terms</a> apply automatically upon accepting Firebase's Terms of Service.</td></tr>
           <tr><td>Anthropic (AI — not currently active)</td><td>USA (planned)</td><td>No data is sent to Anthropic in the current release. AI-assisted features (card scanning, eligibility chat) are disabled; if enabled in a future release this policy will be updated before any data is transferred. SCCs would cover any future EU–US transfer.</td></tr>
-          <tr><td>Apple iCloud</td><td>User's iCloud region</td><td>Document files (PDFs, images) only. Processed under Apple's own DPA. Developer never has access.</td></tr>
+          <tr><td>Apple iCloud</td><td>User's iCloud region</td><td>Document files (PDFs, images), plus your stamp, absence, profile, and document-metadata records (synced via Apple CloudKit so they follow you across your own devices). Processed under Apple's own DPA. Developer never has access to any of it.</td></tr>
           <tr><td>RevenueCat</td><td>USA</td><td>Apple ID receipt data (subscription status and purchase history). For anonymous users, RevenueCat also uses a device identifier (Apple's IDFV) to identify your subscription before a registered account exists — this identifier is used only for this app-functionality purpose and never for advertising or tracking (see §2.2). No payment card data. SCCs apply.</td></tr>
         </tbody>
       </table>
