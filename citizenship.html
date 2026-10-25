@@ -6,6 +6,14 @@
   <title>Irish Citizenship Pathway — Granted</title>
   <meta name="description" content="Your complete guide to Irish citizenship. From your first stamp at the airport to receiving your Irish passport — every step, every document, every milestone explained." />
   <link rel="stylesheet" href="/fonts/fonts.css" />
+  <!-- Google Analytics 4 — replace G-10NP71J9SE with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10NP71J9SE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-10NP71J9SE');
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1419,7 +1427,7 @@
       <div class="comm-contribute">
         <h3>Contribute your timeline</h3>
         <p>Applied for citizenship? Share your timeline with the Granted community — submission date, AIR date, decision date, ceremony date. Your experience helps thousands of people who are starting their journey now.</p>
-        <a href="/#pricing" class="btn-primary">Get the Granted App to Contribute</a>
+        <a href="/#pricing" class="btn-primary" onclick="gtag('event','view_pricing',{event_category:'cta',event_label:'citizenship_contribute'})">Get the Granted App to Contribute</a>
       </div>
 
       <p class="comm-privacy">🔒 All timelines are contributed anonymously. No personal data is ever shared.</p>
@@ -1467,7 +1475,7 @@
       </div>
 
       <div class="hero-cta-group">
-        <a href="/#pricing" class="btn-primary" style="font-size: 1rem; padding: 1rem 2.5rem;">Get Early Access</a>
+        <a href="/#pricing" class="btn-primary" style="font-size: 1rem; padding: 1rem 2.5rem;" onclick="gtag('event','view_pricing',{event_category:'cta',event_label:'citizenship_early_access'})">Get Early Access</a>
         <a href="/" class="btn-outline" style="font-size: 1rem; padding: 1rem 2.5rem; color: var(--text-muted); border-color: var(--cream-dim);">Learn More</a>
       </div>
     </div>

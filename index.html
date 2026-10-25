@@ -6,6 +6,14 @@
   <title>Granted — Your Irish Residence, Organised</title>
   <meta name="description" content="Granted helps non-EU nationals in Ireland track IRP stamps, monitor citizenship eligibility, store documents, and never miss a renewal deadline." />
   <link rel="stylesheet" href="/fonts/fonts.css" />
+  <!-- Google Analytics 4 — replace G-10NP71J9SE with your Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10NP71J9SE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-10NP71J9SE');
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -872,7 +880,7 @@
       Track your IRP stamps, monitor citizenship eligibility, follow your citizenship application stage by stage, and never miss a renewal deadline.
     </p>
     <div class="hero-actions">
-      <a href="https://testflight.apple.com/join/8v3RVQeP" target="_blank" rel="noopener" class="btn-primary">
+      <a href="https://testflight.apple.com/join/8v3RVQeP" target="_blank" rel="noopener" class="btn-primary" onclick="gtag('event','join_beta',{event_category:'cta',event_label:'hero_testflight'})">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect width="20" height="20" rx="4.5" fill="white" fill-opacity="0.25"/>
           <rect width="20" height="20" rx="4.5" fill="url(#tf-grad)"/>
@@ -922,7 +930,7 @@
           <li><strong>Ahead, average, or behind?</strong> Your position is plotted on every stage.</li>
           <li><strong>Additional document rounds</strong> tracked separately if you're asked for more.</li>
         </ul>
-        <a href="#screenshots" class="btn-primary">See it in action</a>
+        <a href="#screenshots" class="btn-primary" onclick="gtag('event','view_screenshots',{event_category:'cta',event_label:'application_tracking'})">See it in action</a>
       </div>
       <div class="app-track-phone">
         <div class="ti-phone ti-phone--large">
@@ -959,7 +967,7 @@
         </div>
       </div>
       <div class="day-one-cta">
-        <a href="/citizenship.html" class="btn-primary">Read the Citizenship Guide →</a>
+        <a href="/citizenship.html" class="btn-primary" onclick="gtag('event','view_citizenship_guide',{event_category:'cta',event_label:'homepage'})">Read the Citizenship Guide →</a>
 </div>
     </div>
   </section>
