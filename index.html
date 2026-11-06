@@ -205,6 +205,9 @@
       animation: fadeUp 0.7s 0.8s forwards;
     }
 
+    .hero-note--steps { margin-top: 0.4rem; }
+    .hero-note--steps a { color: var(--green-deep); text-decoration: underline; }
+
     /* ── FEATURES ── */
     .features {
       padding: 6rem 2rem;
@@ -919,6 +922,7 @@
       <a href="#application-tracking" class="btn-secondary">See the timeline ↓</a>
     </div>
     <p class="hero-note">Free beta · iPhone (iOS 18+) via TestFlight · Android via Google Play</p>
+    <p class="hero-note hero-note--steps">Android: <strong>1.</strong> <a href="https://groups.google.com/g/granted-ireland-testers" target="_blank" rel="noopener" onclick="gtag('event','join_beta',{event_category:'cta',event_label:'android_join_group'})">Join the tester group</a> with your Google account, then <strong>2.</strong> tap <em>Join Android beta</em> above.</p>
     <div class="hero-phones" aria-hidden="true">
       <div class="hero-phone hp-left">
         <img src="screenshots/01_my_stamps.png" alt="" loading="eager" />
