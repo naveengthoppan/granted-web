@@ -6,14 +6,10 @@
   <title>Irish Citizenship Pathway — Granted</title>
   <meta name="description" content="Your complete guide to Irish citizenship. From your first stamp at the airport to receiving your Irish passport — every step, every document, every milestone explained." />
   <link rel="stylesheet" href="/fonts/fonts.css" />
-  <!-- Google Analytics 4 — replace G-10NP71J9SE with your Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10NP71J9SE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-10NP71J9SE');
-  </script>
+  <!-- Google Analytics 4 loads only after consent: see /consent.js. The stub lets
+       onclick gtag() calls queue harmlessly until then. -->
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}</script>
+  <script src="/consent.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -833,7 +829,7 @@
               <p><strong>What to bring:</strong> Valid passport, visa/preclearance letter, proof of address, employment or student letter, and a passport photo. A €300 IRP registration fee may apply, depending on your immigration permission — some categories are exempt.</p>
             </div>
             <div class="tl-tip" style="margin-top: 0.6rem;">
-              <p><strong>Granted Tip:</strong> Scan your IRP card in Granted immediately after registering. The app reads your stamp type, expiry date, and automatically schedules your first renewal reminder.</p>
+              <p><strong>Granted Tip:</strong> Add your IRP stamp to Granted immediately after registering. Enter its type and expiry date, and the app schedules your renewal reminders automatically.</p>
             </div>
           </div>
         </li>
@@ -1447,7 +1443,7 @@
           <h4>From Day One</h4>
           <ul>
             <li>Log your airport entry stamp immediately</li>
-            <li>Scan your first IRP card — renewal reminder set</li>
+            <li>Add your first IRP stamp — renewal reminder set</li>
             <li>Start your residence timeline from Day 1</li>
             <li>Set up your first utility bill reminder</li>
             <li>Track your eligibility counter from zero</li>
@@ -1490,6 +1486,7 @@
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms of Use</a>
       <a href="/support.html">Support</a>
+      <a href="#cookie-settings" data-cookie-settings>Cookie settings</a>
     </div>
     <span class="footer-copy">© 2026 Granted. Made in Ireland.</span>
   </footer>

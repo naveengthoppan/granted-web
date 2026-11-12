@@ -6,14 +6,10 @@
   <title>Granted — Your Irish Residence, Organised</title>
   <meta name="description" content="Granted helps non-EU nationals in Ireland track IRP stamps, monitor citizenship eligibility, store documents, and never miss a renewal deadline." />
   <link rel="stylesheet" href="/fonts/fonts.css" />
-  <!-- Google Analytics 4 — replace G-10NP71J9SE with your Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10NP71J9SE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-10NP71J9SE');
-  </script>
+  <!-- Google Analytics 4 loads only after consent: see /consent.js. The stub lets
+       onclick gtag() calls queue harmlessly until then. -->
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}</script>
+  <script src="/consent.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1101,13 +1097,6 @@
         <p>Scan your IRP card with your camera to auto-fill stamp details, with text recognition that runs on-device so your card image is never stored or transmitted. This feature is not enabled in the current release and will arrive in a future update.</p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-icon">💬</div>
-        <div class="badge badge-pro">Pro · Coming soon</div>
-        <h3>AI Eligibility Q&amp;A</h3>
-        <p>Ask plain-English questions about your situation and get answers based on your own stamp history and travel log. This feature is not enabled in the current release and will arrive in a future update. For guidance only — not legal advice.</p>
-      </div>
-
     </div>
   </section>
 
@@ -1151,12 +1140,11 @@
 
         <div class="preview-item">
           <div class="preview-phone">
-            <img src="screenshots/06_add_stamp.png" alt="Add Stamp form with IRP card scanning Pro feature" loading="lazy" />
+            <img src="screenshots/06_add_stamp.png" alt="Add Stamp form with stamp type, issue date and expiry date" loading="lazy" />
           </div>
           <div class="preview-caption">
             <h4>Add Stamp</h4>
-            <p>Manual entry or instant camera scan — point at your IRP card to auto-fill details</p>
-            <span class="badge badge-pro">Pro scan</span>
+            <p>Add a stamp in seconds — pick the type printed on your IRP card and its dates</p>
           </div>
         </div>
 
@@ -1256,6 +1244,7 @@
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms of Use</a>
       <a href="/support.html">Support</a>
+      <a href="#cookie-settings" data-cookie-settings>Cookie settings</a>
     </div>
     <span class="footer-copy">© 2026 Granted. Made in Ireland.</span>
   </footer>

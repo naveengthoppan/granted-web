@@ -6,14 +6,10 @@
   <title>Privacy Policy — Granted</title>
   <meta name="description" content="Granted Privacy Policy and GDPR compliance statement." />
   <link rel="stylesheet" href="/fonts/fonts.css" />
-  <!-- Google Analytics 4 — replace G-10NP71J9SE with your Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10NP71J9SE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-10NP71J9SE');
-  </script>
+  <!-- Google Analytics 4 loads only after consent: see /consent.js. The stub lets
+       onclick gtag() calls queue harmlessly until then. -->
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}</script>
+  <script src="/consent.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -198,7 +194,7 @@
   <div class="page-header">
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Version 1.10 · Effective 27 March 2026 · Last updated 13 September 2026</p>
+    <p class="meta">Version 1.11 · Effective 27 March 2026 · Last updated 12 November 2026</p>
   </div>
 
   <div class="content">
@@ -209,7 +205,8 @@
 
     <h2>1. Overview</h2>
     <p>Granted processes personal data belonging to non-EU nationals living in Ireland. This data includes immigration status, document metadata, and identity information used for authentication. This policy defines how that data is collected, stored, processed, and protected in compliance with the <strong>General Data Protection Regulation (GDPR)</strong> and the <strong>Irish Data Protection Acts 2018</strong>.</p>
-    <p>As the developer and operator of Granted, the individual developer acts as the <strong>Data Controller</strong> for all personal data processed through the app. Third-party services (Firebase / Google — including Cloud Messaging, Apple iCloud and push delivery, RevenueCat) act as Data Processors under their respective data processing agreements. Anthropic is named in this policy for transparency only — the AI-assisted features that would use it are not currently active (see §2.4).</p>
+    <p>As the developer and operator of Granted, the individual developer acts as the <strong>Data Controller</strong> for all personal data processed through the app. Third-party services (Firebase / Google — including Cloud Messaging, Apple iCloud and push delivery, RevenueCat) act as Data Processors under their respective data processing agreements. The app does not use any third-party AI service (see §2.4).</p>
+    <p>This policy also covers this website, <strong>getgranted.app</strong>, which uses Google Analytics only if you accept analytics cookies (see §2.6).</p>
 
     <h3>1.1 Data Controller</h3>
     <p>
@@ -232,7 +229,7 @@
           <tr><td>Absence records (travel dates, destination)</td><td>Contract — to provide the app's core tracking functionality</td><td>Art. 6(1)(b)</td></tr>
           <tr><td>Document metadata (filename, type, year)</td><td>Contract — to provide the Pro Document Vault you purchase</td><td>Art. 6(1)(b)</td></tr>
           <tr><td>Application Timeline submission (anonymous milestone dates)</td><td>Consent — optional community sharing</td><td>Art. 6(1)(a)</td></tr>
-          <tr><td>OCR text from IRP card scan (planned — not currently active)</td><td>Consent — optional Pro feature, if introduced</td><td>Art. 6(1)(a)</td></tr>
+          <tr><td>Website analytics cookies (getgranted.app, only if you accept)</td><td>Consent — given through the cookie banner, withdrawable at any time</td><td>Art. 6(1)(a); Reg. 5(3) of the ePrivacy Regulations (S.I. 336/2011)</td></tr>
         </tbody>
       </table>
     </div>
@@ -260,7 +257,7 @@
 
     <h3>2.2 Data We Do NOT Store</h3>
     <ul>
-      <li>IRP card photographs — card scanning (OCR) is not enabled in the current release; if activated in a future release, images would be held in memory only during extraction, then immediately discarded</li>
+      <li>IRP card photographs — the app has no card-scanning feature in the current release</li>
       <li>Passport photographs or biometric data of any kind</li>
       <li>Payment information — all payment processing is handled exclusively by Apple and RevenueCat</li>
       <li>Location data — the app never requests location permission</li>
@@ -279,15 +276,15 @@
           <tr><td>Firebase / Firestore (Google)</td><td>Firestore is hosted in the <strong>europe-west1</strong> region (Belgium, EU) — your anonymous Application Timeline data does not leave the EU. Firebase Authentication does not offer a selectable region; any transfer outside the EEA is covered by Google's Standard Contractual Clauses and EU–US Data Privacy Framework certification (GDPR Art. 46)</td><td>Firebase Auth: UID, email address, display name (if provided), authentication tokens. Firestore: anonymous Application Timeline submissions only (see §2.5). Google's <a href="https://firebase.google.com/terms/data-processing-terms" target="_blank" rel="noopener">Firebase Data Processing and Security Terms</a> apply automatically upon accepting Firebase's Terms of Service.</td></tr>
           <tr><td>Firebase Cloud Messaging (Google)</td><td>Cloud Messaging does not offer a selectable region; any transfer outside the EEA is covered by Google's Standard Contractual Clauses and EU–US Data Privacy Framework certification (GDPR Art. 46)</td><td><strong>Only if you turn on immigration news notifications.</strong> A push registration token generated by your device, and the fact that your device is subscribed to our single Ireland-wide news topic. No account link, no stamp or permit information, and nothing about your immigration status is shared — every subscriber receives the same broadcast. Turning the toggle off unsubscribes your device.</td></tr>
           <tr><td>Apple (Push Notification service)</td><td>Apple infrastructure</td><td>Delivers the push notification to your device, under Apple's own DPA. Applies only if you turn on news notifications.</td></tr>
-          <tr><td>Anthropic (AI — not currently active)</td><td>USA (planned)</td><td>No data is sent to Anthropic in the current release. AI-assisted features (card scanning, eligibility chat) are disabled; if enabled in a future release this policy will be updated before any data is transferred. SCCs would cover any future EU–US transfer.</td></tr>
+          <tr><td>Google Analytics 4 (Google Ireland Limited) — <strong>this website only</strong></td><td>Google may process analytics data outside the EEA; any such transfer is covered by Google's Standard Contractual Clauses and EU–US Data Privacy Framework certification (GDPR Art. 46)</td><td><strong>Only if you accept analytics cookies on getgranted.app.</strong> Pages viewed, clicks on our buttons, approximate location (country/city, derived from your IP address — Google Analytics 4 does not log or store IP addresses), device and browser type, the site that referred you, and a random cookie identifier. Never linked to your app account, and never used for advertising. Not used in the app. See §2.6.</td></tr>
           <tr><td>Apple iCloud</td><td>User's iCloud region</td><td>Document files (PDFs, images), plus your stamp, absence, profile, and document-metadata records (synced via Apple CloudKit so they follow you across your own devices). Processed under Apple's own DPA. Developer never has access to any of it.</td></tr>
           <tr><td>RevenueCat</td><td>USA</td><td>Apple ID receipt data (subscription status and purchase history). For anonymous users, RevenueCat also uses a device identifier (Apple's IDFV) to identify your subscription before a registered account exists — this identifier is used only for this app-functionality purpose and never for advertising or tracking (see §2.2). No payment card data. SCCs apply.</td></tr>
         </tbody>
       </table>
     </div>
 
-    <h3>2.4 AI Features (Not Currently Active)</h3>
-    <p>Earlier versions of this policy described AI-assisted features — IRP card scanning via optical character recognition (OCR) and an AI eligibility chat — that would send text to Anthropic in the United States. <strong>These features are disabled in the current release and no data is sent to Anthropic.</strong> No names, OCR text, or other personal data are transmitted to the United States by the app. If these features are introduced in a future release, this policy will be updated and the relevant consent and transfer disclosures provided before any data is processed.</p>
+    <h3>2.4 No Third-Party AI</h3>
+    <p><strong>The Granted app does not use any third-party AI service, and no personal data is sent to any AI provider.</strong> Earlier versions of this policy described planned AI-assisted features (IRP card scanning and an eligibility chat) that would have used Anthropic. Those features were never active and have been withdrawn. If any AI-assisted feature is introduced in future, this policy will be updated, and the app will ask for your permission, before any data is shared.
 
     <h3>2.5 Application Timeline (Opt-In Community Sharing)</h3>
     <p>The app includes an optional, community-powered <strong>Application Timeline</strong> feature. It is off by default and only operates when you actively choose to share.</p>
@@ -297,6 +294,16 @@
       <li><strong>Retention:</strong> shared submissions are deleted after 3 years.</li>
       <li><strong>Your control:</strong> you can remove your shared data at any time from within the app.</li>
       <li><strong>Reading benchmarks and news:</strong> the app also reads anonymous, aggregate community benchmarks and immigration news. Reading this content involves no personal data and does not require an account.</li>
+    </ul>
+
+    <h3 id="website-analytics">2.6 This Website: Analytics and Cookies</h3>
+    <p>This section covers <strong>getgranted.app</strong> only. The Granted app contains no analytics.</p>
+    <ul>
+      <li><strong>Off until you choose:</strong> Google Analytics is not loaded, and no request is made to Google, until you select <em>Accept analytics</em> in the cookie banner. If you select <em>Reject</em>, it is never loaded.</li>
+      <li><strong>What it is used for:</strong> counting visits and seeing which pages and buttons are useful, so we can improve the site. It is not used for advertising, and advertising-related consent is always kept off.</li>
+      <li><strong>Cookies set if you accept:</strong> <code>_ga</code> and <code>_ga_&lt;ID&gt;</code> (Google Analytics, distinguishing visitors and sessions; they expire after up to 2 years). Your choice itself is remembered in your browser's local storage so we don't ask on every page. This is strictly necessary and contains no identifier.</li>
+      <li><strong>Retention:</strong> analytics event data is kept in Google Analytics for no longer than 14 months.</li>
+      <li><strong>Changing your mind:</strong> select <a href="#cookie-settings" data-cookie-settings>Cookie settings</a> in the footer of any page. Rejecting after accepting stops collection and deletes the Google Analytics cookies from your browser.</li>
     </ul>
 
     <h2>3. Your Rights</h2>
@@ -312,7 +319,7 @@
     <p>You can export your data at any time from within the app: <strong>Profile → Export My Data</strong> provides your stamp and absence records in structured, machine-readable JSON and CSV formats, delivered immediately via the iOS share sheet — no request needed. This is the only way to export them: because these records never reach our servers, we cannot produce the export for you by email. If you lose your device, records synced to your iCloud return when you reinstall Granted and sign back into the same iCloud account and the same Granted account. Records created as a guest, without an account, may not be recoverable.</p>
 
     <h3>3.4 Right to Withdraw Consent</h3>
-    <p>Where we rely on your consent — the optional Application Timeline sharing — you can withdraw it at any time from within the app ("Remove my shared data"), without affecting the lawfulness of processing before withdrawal. Core account and tracking features rely on contract, not consent; you can stop that processing at any time by deleting your account or the app. Anonymous sessions hold no personal data.</p>
+    <p>Where we rely on your consent — the optional Application Timeline sharing, and analytics cookies on this website — you can withdraw it at any time: from within the app ("Remove my shared data"), or through <em>Cookie settings</em> in the website footer. Withdrawal does not affect the lawfulness of processing before it. Core account and tracking features rely on contract, not consent; you can stop that processing at any time by deleting your account or the app. Anonymous sessions hold no personal data.</p>
 
     <h3>3.5 Right to Rectification (Article 16)</h3>
     <p>You can correct inaccurate personal data. Your display name and email can be edited from the Profile screen; stamp and absence records can be edited or deleted at any time within the app. For the account record we hold, contact <a href="mailto:privacy@getgranted.ie">privacy@getgranted.ie</a>.</p>
@@ -336,7 +343,7 @@
     <ul>
       <li>Anonymous sessions collect zero personal data — the app is fully functional without an account</li>
       <li>Stamp records contain only type and dates — no free-text fields except optional notes</li>
-      <li>When IRP card scanning launches, the OCR pipeline will discard the card image immediately after text extraction — the image will never be stored or transmitted</li>
+      <li>The app has no card-scanning feature in the current release, so no card images are captured</li>
       <li>Only document metadata is stored in SwiftData — not document content</li>
     </ul>
 
@@ -391,6 +398,7 @@
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms of Use</a>
       <a href="/support.html">Support</a>
+      <a href="#cookie-settings" data-cookie-settings>Cookie settings</a>
     </div>
     <span class="footer-copy">© 2026 Granted. Made in Ireland.</span>
   </footer>
