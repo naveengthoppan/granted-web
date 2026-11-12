@@ -6,14 +6,10 @@
   <title>Support — Granted</title>
   <meta name="description" content="Get help with Granted — Irish citizenship eligibility tracker. FAQs, contact information, and useful links." />
   <link rel="stylesheet" href="/fonts/fonts.css" />
-  <!-- Google Analytics 4 — replace G-10NP71J9SE with your Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-10NP71J9SE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-10NP71J9SE');
-  </script>
+  <!-- Google Analytics 4 loads only after consent: see /consent.js. The stub lets
+       onclick gtag() calls queue harmlessly until then. -->
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}</script>
+  <script src="/consent.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -363,7 +359,7 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer" role="region">
-          <p>Pro adds the Document Vault and the Application Timeline (with IRP card scanning and AI eligibility Q&amp;A coming in a future update). Family includes everything in Pro, plus support for up to 5 family member profiles — useful for tracking eligibility for your whole household.</p>
+          <p>Pro adds the Document Vault and the Application Timeline (with on-device IRP card scanning coming in a future update). Family includes everything in Pro, plus support for up to 5 family member profiles — useful for tracking eligibility for your whole household.</p>
         </div>
       </div>
 
@@ -401,6 +397,7 @@
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms of Use</a>
       <a href="/support.html">Support</a>
+      <a href="#cookie-settings" data-cookie-settings>Cookie settings</a>
     </div>
     <span class="footer-copy">© 2026 Granted. Made in Ireland.</span>
   </footer>
